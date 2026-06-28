@@ -52,6 +52,9 @@
       line-height: 1.04;
       letter-spacing: -0.045em;
       font-weight: 850;
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: normal;
     }
     .subtitle {
       color: var(--muted2);
@@ -213,6 +216,9 @@
       letter-spacing: -0.025em;
       font-weight: 850;
       color: var(--text);
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
     .section-subtitle {
       margin: 0 0 32px;
@@ -260,11 +266,21 @@
       line-height: 1.75;
     }
     .center-photo {
-      margin: 86px auto 0;
-      width: min(100%, 560px);
+      margin: 50px auto 40px;
+      width: fit-content;
+      max-width: 100%;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 1px 0 rgba(0,0,0,.05);
+      text-align: center;
+      background: transparent;
+    }
+    .center-photo img {
+      width: auto;
+      max-width: 100%;
+      max-height: 760px;
+      margin: 0 auto;
+      display: block;
     }
     .article-text {
       color: var(--muted);
@@ -413,6 +429,9 @@
       font-weight: 850;
       margin: 0 0 34px;
       color: var(--text);
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
     .product-card {
       position: relative;
@@ -842,7 +861,7 @@
         </tbody>
       </table>
 
-      <div class="center-photo" style="margin-top:28px;">
+      <div class="center-photo">
         <img src="/assets/window-use-2.gif" alt="Робот-мойщик на окне" />
       </div>
     </div>
