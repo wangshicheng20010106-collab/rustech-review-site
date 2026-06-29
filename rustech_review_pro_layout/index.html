@@ -200,14 +200,23 @@
       font-weight: 850;
     }
     .lead {
-      max-width: 980px;
+      width: 100%;
+      max-width: none;
       color: #4b5563;
       font-size: 16px;
       line-height: 1.9;
       margin: 0;
+      overflow-wrap: anywhere;
+      text-wrap: pretty;
+    }
+    .lead + .lead {
+      margin-top: 16px;
     }
     .section {
       padding: 48px 0;
+    }
+    .criteria-section {
+      padding-bottom: 12px;
     }
     .section-title {
       margin: 0 0 12px;
@@ -274,6 +283,12 @@
       box-shadow: 0 1px 0 rgba(0,0,0,.05);
       text-align: center;
       background: transparent;
+    }
+    .criteria-photo {
+      margin-bottom: 12px;
+    }
+    .testing-section {
+      padding-top: 16px;
     }
     .center-photo img {
       width: auto;
@@ -832,6 +847,8 @@
       }
       .mini-card, .mini-card.winner { min-height: 250px; }
       .section { padding: 28px 0; }
+      .criteria-section { padding-bottom: 8px; }
+      .testing-section { padding-top: 8px; }
       .section-title {
         margin-bottom: 18px;
         font-size: 28px;
@@ -860,6 +877,7 @@
         margin: 26px 0 10px;
       }
       .center-photo { margin: 36px auto 36px; }
+      .criteria-photo { margin-bottom: 8px; }
       .review-image { margin-top: 24px; }
       .product-card {
         padding: 18px 16px;
@@ -905,7 +923,7 @@
       <p class="subtitle">По версии команды «RusTech Review»</p>
 
       <div class="author">
-        <img src="/assets/author.jpg" alt="Алексей Смирнов" />
+        <img src="assets/author.jpg" alt="Алексей Смирнов" />
         <div>
           <div class="author-line"><strong>Алексей Смирнов</strong><span>·</span><span>Январь 2026</span></div>
           <p class="author-note">Провёл более 100 сравнительных тестов бытовой техники</p>
@@ -913,88 +931,90 @@
       </div>
 
       <div class="hero-img">
-        <img src="/assets/hero-top5.png" alt="ТОП-5 роботов-мойщиков окон 2026" />
+        <img src="assets/hero-top5.png" alt="ТОП-5 роботов-мойщиков окон 2026" />
       </div>
 
       <div class="product-strip">
         <a class="mini-card winner" href="#gelios-detail">
-          <img src="/assets/gelios-card.jpg" alt="Gelios Nova G1" />
+          <img src="assets/gelios-card.jpg" alt="Gelios Nova G1" />
           <div class="mini-title"><span>Gelios</span><b>Nova G1</b></div>
           <div class="rank">♕</div>
           <div class="best-label">★ ЛУЧШИЙ</div>
         </a>
         <a class="mini-card" href="#dadjet-detail">
-          <img src="/assets/dadjet-card.jpg" alt="Даджет W220" />
+          <img src="assets/dadjet-card.jpg" alt="Даджет W220" />
           <div class="mini-title"><span>Даджет</span><b>W220</b></div>
           <div class="rank">#2</div>
         </a>
         <a class="mini-card" href="#cleanbot-detail">
-          <img src="/assets/cleanbot-card.jpg" alt="Cleanbot tex0121" />
+          <img src="assets/cleanbot-card.jpg" alt="Cleanbot tex0121" />
           <div class="mini-title"><span>Cleanbot</span><b>tex0121</b></div>
           <div class="rank">#3</div>
         </a>
         <a class="mini-card" href="#rutbot-detail">
-          <img src="/assets/rutbot-card.jpg" alt="Rutbot L200" />
+          <img src="assets/rutbot-card.jpg" alt="Rutbot L200" />
           <div class="mini-title"><span>Rutbot</span><b>L200</b></div>
           <div class="rank">#4</div>
         </a>
         <a class="mini-card" href="#cleanlo-detail">
-          <img src="/assets/cleanlo-card.jpg" alt="CleanLo HCR-11" />
+          <img src="assets/cleanlo-card.jpg" alt="CleanLo HCR-11" />
           <div class="mini-title"><span>CleanLo</span><b>HCR-11</b></div>
           <div class="rank">#5</div>
         </a>
       </div>
 
-      <p class="lead">Покупать робота-мойщика окон стоит не только по характеристикам на бумаге. Важнее понять, как он работает в обычной квартире: держится ли на стекле, легко ли запускается, хорошо ли очищает поверхность и оправдывает ли свою цену. Команда RusTech Review при выборе актуальных моделей на 2026 год ориентировалась не на рекламные функции, а на практичность для повседневного использования в российских домах — особенно в квартирах, на балконах, больших окнах, зеркалах и плитке.</p>
+      <p class="lead">Покупать робот-мойщик окон стоит не только по характеристикам на бумаге. Намного важнее понять, как он работает в обычной квартире: надежно ли держится на стекле, легко ли запускается, хорошо ли очищает поверхность и действительно ли оправдывает свою цену.</p>
+      <p class="lead">При подготовке рейтинга роботов-мойщиков окон на 2026 год команда RusTech Review ориентировалась не на рекламные функции, а на практичность в повседневном использовании в российских домах.</p>
+      <p class="lead">Мы учитывали, какой робот-мойщик окон лучше подходит для квартир, балконов, больших окон, зеркал и плитки, а также насколько удобны модели с распылением, автоматическим построением маршрута и простым управлением. Такой подход помогает понять, как выбрать робот-мойщик окон и на что обратить внимание перед покупкой.</p>
     </div>
   </header>
 
-  <section class="section">
+  <section class="section criteria-section">
     <div class="narrow">
-      <h2 class="section-title">На что мы обращали внимание!</h2>
-      <p class="section-subtitle">При выборе робота-мойщика окон важно учитывать множество факторов. Ниже — 5 ключевых критериев, по которым мы оценивали каждую модель.</p>
+      <h2 class="section-title">На что мы обращали внимание при выборе робота-мойщика окон</h2>
+      <p class="section-subtitle">Чтобы понять, какой робот-мойщик окон лучше подходит для повседневного использования, важно смотреть не только на характеристики, но и на реальные сценарии уборки. Ниже — 5 ключевых критериев, по которым мы оценивали модели для рейтинга роботов-мойщиков окон 2026 года.</p>
       <ol class="criteria-list">
         <li>
-          <h3>Стабильное сцепление</h3>
-          <p>Робот должен уверенно держаться на стекле, не скользить и не сбиваться с маршрута. Для высоких этажей это особенно важно.</p>
+          <h3>Стабильное сцепление со стеклом</h3>
+          <p>Хороший робот-мойщик окон должен уверенно держаться на поверхности, не скользить и не сбиваться с маршрута. Для квартир на высоких этажах, балконов и больших окон это один из самых важных показателей безопасности.</p>
         </li>
         <li>
           <h3>Простое управление</h3>
-          <p>Хорошая модель должна быть понятна даже новичку: пульт, простые режимы, ясная инструкция и подсказки на корпусе делают использование намного удобнее.</p>
+          <p>Лучшие роботы-мойщики окон должны быть понятны даже новичку. Удобный пульт, простые режимы, понятная инструкция и подсказки на корпусе делают запуск и ежедневное использование намного проще.</p>
         </li>
         <li>
           <h3>Качество уборки</h3>
-          <p>Мы оценивали, как устройство справляется с пылью, следами воды и обычными загрязнениями. Автоматическое распыление воды — заметный плюс, потому что оно делает уборку более равномерной и менее хлопотной.</p>
+          <p>Мы оценивали, насколько хорошо устройство справляется с пылью, следами воды, разводами и обычными загрязнениями. Робот-мойщик окон с распылением получает дополнительное преимущество, потому что помогает равномерно увлажнять поверхность и делает уборку менее хлопотной.</p>
         </li>
         <li>
           <h3>Комплектация</h3>
-          <p>Чем больше салфеток, колец и нужных аксессуаров в комплекте, тем меньше дополнительных расходов после покупки.</p>
+          <p>При выборе робота-мойщика окон важно учитывать, что входит в комплект. Чем больше салфеток, чистящих колец и полезных аксессуаров поставляется вместе с устройством, тем меньше дополнительных расходов после покупки.</p>
         </li>
         <li>
           <h3>Цена и практичность</h3>
-          <p>Самая дорогая модель не всегда лучшая. Для большинства пользователей важнее, чтобы робот за разумную цену закрывал основные задачи: безопасно держался, нормально мыл окна и был простым в использовании.</p>
+          <p>Самая дорогая модель не всегда оказывается лучшей. Для большинства пользователей важнее, чтобы робот-мойщик окон за разумную цену решал основные задачи: надежно держался на стекле, качественно мыл окна, был простым в управлении и подходил для регулярного использования дома.</p>
         </li>
       </ol>
-      <div class="center-photo">
-        <img src="/assets/window-use-1.gif" alt="Gelios Nova G1 на окне" />
+      <div class="center-photo criteria-photo">
+        <img src="assets/window-use-1.gif" alt="Gelios Nova G1 на окне" />
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section testing-section">
     <div class="container article-text">
-      <h3>Как проходило тестирование?</h3>
-      <p>Чтобы проверить, как робот-мойщик окон показывает себя в реальных домашних условиях, мы приобрели несколько популярных моделей и протестировали их на практике. Главная цель заключалась не в сравнении характеристик на бумаге, а в том, чтобы понять, насколько устройство удобно в повседневном использовании, экономит ли время и стабильно ли очищает поверхность.</p>
-      <p>Во время тестирования мы использовали три основных подхода:</p>
+      <h3>Как проходило тестирование роботов-мойщиков окон</h3>
+      <p>Чтобы понять, какой робот-мойщик окон действительно удобен для дома, мы протестировали несколько популярных моделей в реальных бытовых условиях. Главная цель заключалась не в том, чтобы сравнить только характеристики на бумаге, а в том, чтобы оценить, как устройство ведет себя в обычной квартире: стабильно ли держится на стекле, хорошо ли очищает поверхность, экономит ли время и насколько удобно им пользоваться каждый день.</p>
+      <p>Во время тестирования мы использовали три основных подхода.</p>
 
       <h3>Тест одного полного цикла уборки</h3>
-      <p>Мы установили робота на окно, запустили стандартный режим очистки и после завершения проверили чистоту стекла, наличие разводов, следов воды и качество очистки по краям.</p>
+      <p>Мы установили робот-мойщик окон на стекло, запустили стандартный режим очистки и после завершения проверили результат: чистоту поверхности, наличие разводов, следов воды, равномерность уборки и качество очистки по краям окна.</p>
 
       <h3>Тест на разных поверхностях</h3>
-      <p>Помимо обычных окон, устройство также тестировалось на зеркалах, плитке и гладких поверхностях, чтобы оценить, подходит ли оно для разных домашних сценариев.</p>
+      <p>Помимо обычных окон, модели также тестировались на зеркалах, плитке и других гладких поверхностях. Это помогло понять, насколько робот-мойщик окон подходит для разных домашних сценариев — от балкона и больших окон до ванной комнаты и зеркальных поверхностей.</p>
 
-      <h3>Сравнение цены и комплектации</h3>
-      <p>При схожем качестве уборки мы сравнили цену, количество аксессуаров в комплекте и удобство управления, чтобы понять, какая модель предлагает более выгодное соотношение цены и практичности.</p>
+      <h3>Сравнение цены, комплектации и удобства</h3>
+      <p>При схожем качестве уборки мы сравнивали цену, количество аксессуаров в комплекте, простоту управления и наличие полезных функций. Отдельное внимание уделялось моделям с распылением, так как робот-мойщик окон с распылением помогает равномерно увлажнять стекло и делает уборку более удобной. Такой подход позволил оценить не только технические параметры, но и реальную практичность каждой модели для рейтинга роботов-мойщиков окон 2026 года.</p>
 
       <div class="comparison">
         <h2 class="section-title">Сравнение по ключевым показателям</h2>
@@ -1126,7 +1146,7 @@
       </div>
 
       <div class="center-photo">
-        <img src="/assets/window-use-2.gif" alt="Робот-мойщик на окне" />
+        <img src="assets/window-use-2.gif" alt="Робот-мойщик на окне" />
       </div>
     </div>
   </section>
@@ -1140,7 +1160,7 @@
         <div class="brand-tag">Gelios</div>
         <div class="product-score score-badge">10/10</div>
         <div class="product-main">
-          <div class="product-image"><img src="/assets/gelios-square.jpg" alt="Gelios Nova G1" /></div>
+          <div class="product-image"><img src="assets/gelios-square.jpg" alt="Gelios Nova G1" /></div>
           <div class="product-info">
             <h3>Gelios Nova G1</h3>
             <div class="stars">★★★★★ <span style="color:#6b7280">4.8</span></div>
@@ -1160,9 +1180,9 @@
         </div>
         <p class="product-desc">Главное преимущество Gelios Nova G1 — более доступная цена, практичная комплектация и удобство для новичков. Модель оснащена ультразвуковым распылением воды, резервуаром на 70 мл, 6-метровым кабелем питания и полным набором аксессуаров для уборки.</p>
         <div class="gallery">
-          <img src="/assets/gelios-gallery-1.jpg" alt="Gelios Nova G1 отзыв 1" />
-          <img src="/assets/gelios-gallery-2.jpg" alt="Gelios Nova G1 отзыв 2" />
-          <img src="/assets/gelios-gallery-3.jpg" alt="Gelios Nova G1 отзыв 3" />
+          <img src="assets/gelios-gallery-1.jpg" alt="Gelios Nova G1 отзыв 1" />
+          <img src="assets/gelios-gallery-2.jpg" alt="Gelios Nova G1 отзыв 2" />
+          <img src="assets/gelios-gallery-3.jpg" alt="Gelios Nova G1 отзыв 3" />
         </div>
         <div class="includes"><strong>В комплект Gelios Nova G1 входят:</strong><br>пульт ДУ, распылитель, бутылочка для воды, трос, 10 салфеток, 4 чистящих кольца, инструкция и сумка для хранения.</div>
       </article>
@@ -1172,7 +1192,7 @@
         <div class="brand-tag">Даджет</div>
         <div class="product-score score-badge">9/10</div>
         <div class="product-main">
-          <div class="product-image"><img src="/assets/dadjet-square.jpg" alt="Даджет W220" /></div>
+          <div class="product-image"><img src="assets/dadjet-square.jpg" alt="Даджет W220" /></div>
           <div class="product-info">
             <h3>Даджет W220</h3>
             <div class="stars">★★★★★ <span style="color:#6b7280">4.8</span></div>
@@ -1190,9 +1210,9 @@
         </div>
         <p class="product-desc">Преимущество Даджет W220 в основном связано с двойным распылением воды, мощностью 90 Вт и поддержкой быстрой безрамной очистки. Для пользователей, которым важно максимальное качество очистки, это сильная модель.</p>
         <div class="gallery">
-          <img src="/assets/dadjet-gallery-1.jpg" alt="Даджет W220 отзыв 1" />
-          <img src="/assets/dadjet-gallery-2.jpg" alt="Даджет W220 отзыв 2" />
-          <img src="/assets/dadjet-gallery-3.jpg" alt="Даджет W220 отзыв 3" />
+          <img src="assets/dadjet-gallery-1.jpg" alt="Даджет W220 отзыв 1" />
+          <img src="assets/dadjet-gallery-2.jpg" alt="Даджет W220 отзыв 2" />
+          <img src="assets/dadjet-gallery-3.jpg" alt="Даджет W220 отзыв 3" />
         </div>
         <div class="includes"><strong>В комплект Даджет W220 входят:</strong><br>кабель питания, страховочный трос, распылитель, пульт ДУ, салфетки, 4 чистящих кольца, пользовательская инструкция и гарантийный талон.</div>
       </article>
@@ -1202,7 +1222,7 @@
         <div class="brand-tag">Cleanbot</div>
         <div class="product-score score-badge warn">7/10</div>
         <div class="product-main">
-          <div class="product-image"><img src="/assets/cleanbot-square.jpg" alt="Cleanbot tex0121" /></div>
+          <div class="product-image"><img src="assets/cleanbot-square.jpg" alt="Cleanbot tex0121" /></div>
           <div class="product-info">
             <h3>Cleanbot tex0121</h3>
             <div class="stars">★★★★☆ <span style="color:#6b7280">4.8</span></div>
@@ -1220,9 +1240,9 @@
         </div>
         <p class="product-desc">Cleanbot tex0121 выделяется комплектацией: много салфеток и поддержка безрамной очистки. Модель подойдёт пользователям, которым нужна частая уборка и большой запас расходников.</p>
         <div class="gallery">
-          <img src="/assets/cleanbot-gallery-1.jpg" alt="Cleanbot отзыв 1" />
-          <img src="/assets/cleanbot-gallery-2.jpg" alt="Cleanbot отзыв 2" />
-          <img src="/assets/cleanbot-gallery-3.jpg" alt="Cleanbot отзыв 3" />
+          <img src="assets/cleanbot-gallery-1.jpg" alt="Cleanbot отзыв 1" />
+          <img src="assets/cleanbot-gallery-2.jpg" alt="Cleanbot отзыв 2" />
+          <img src="assets/cleanbot-gallery-3.jpg" alt="Cleanbot отзыв 3" />
         </div>
         <div class="includes"><strong>В комплект Cleanbot tex0121 входит:</strong><br>кабель питания, страховочный трос, распылитель, пульт ДУ, 12 салфеток, 4 чистящих кольца и инструкция пользователя.</div>
       </article>
@@ -1232,7 +1252,7 @@
         <div class="brand-tag">Rutbot</div>
         <div class="product-score score-badge warn">6/10</div>
         <div class="product-main">
-          <div class="product-image"><img src="/assets/rutbot-square.jpg" alt="Rutbot L200" /></div>
+          <div class="product-image"><img src="assets/rutbot-square.jpg" alt="Rutbot L200" /></div>
           <div class="product-info">
             <h3>Rutbot L200</h3>
             <div class="stars">★★★★☆ <span style="color:#6b7280">4.8</span></div>
@@ -1250,9 +1270,9 @@
         </div>
         <p class="product-desc">Rutbot L200 функционален, но высокая стоимость и небольшой резервуар снижают общую выгоду. В рейтинге модель занимает четвёртое место.</p>
         <div class="gallery">
-          <img src="/assets/rutbot-gallery-1.jpg" alt="Rutbot отзыв 1" />
-          <img src="/assets/rutbot-gallery-2.jpg" alt="Rutbot отзыв 2" />
-          <img src="/assets/rutbot-gallery-3.jpg" alt="Rutbot отзыв 3" />
+          <img src="assets/rutbot-gallery-1.jpg" alt="Rutbot отзыв 1" />
+          <img src="assets/rutbot-gallery-2.jpg" alt="Rutbot отзыв 2" />
+          <img src="assets/rutbot-gallery-3.jpg" alt="Rutbot отзыв 3" />
         </div>
         <div class="includes"><strong>В комплект Rutbot L200 входит:</strong><br>кабель питания, страховочный трос, распылитель, бутылочка для воды, пульт ДУ, салфетки и инструкция.</div>
       </article>
@@ -1262,7 +1282,7 @@
         <div class="brand-tag">CleanLo</div>
         <div class="product-score score-badge low">5/10</div>
         <div class="product-main">
-          <div class="product-image"><img src="/assets/cleanlo-square.jpg" alt="CleanLo HCR-11" /></div>
+          <div class="product-image"><img src="assets/cleanlo-square.jpg" alt="CleanLo HCR-11" /></div>
           <div class="product-info">
             <h3>CleanLo HCR-11</h3>
             <div class="stars">★★★★☆ <span style="color:#6b7280">4.8</span></div>
@@ -1280,9 +1300,9 @@
         </div>
         <p class="product-desc">CleanLo HCR-11 — базовый робот-мойщик окон с автоматическим распылением воды. Основные характеристики достаточные, но ценовые и конфигурационные преимущества выражены слабее.</p>
         <div class="gallery">
-          <img src="/assets/cleanlo-gallery-1.jpg" alt="CleanLo отзыв 1" />
-          <img src="/assets/cleanlo-gallery-2.jpg" alt="CleanLo отзыв 2" />
-          <img src="/assets/cleanlo-gallery-3.jpg" alt="CleanLo отзыв 3" />
+          <img src="assets/cleanlo-gallery-1.jpg" alt="CleanLo отзыв 1" />
+          <img src="assets/cleanlo-gallery-2.jpg" alt="CleanLo отзыв 2" />
+          <img src="assets/cleanlo-gallery-3.jpg" alt="CleanLo отзыв 3" />
         </div>
         <div class="includes"><strong>В комплект CleanLo HCR-11 входят:</strong><br>кабель питания, страховочный трос, бутылочка для воды, пульт ДУ, батарейка для пульта, 10 салфеток и инструкция.</div>
       </article>
@@ -1291,18 +1311,19 @@
 
   <section class="text-review">
     <div class="container article-text">
-      <h2 class="section-title">На что мы обращали внимание при выборе</h2>
-      <p><span class="smallcaps">1. Стабильность сцепления</span><br>Для безопасной уборки робот должен уверенно держаться на стекле. Более мощные модели, такие как Даджет W220 и CleanLo HCR-11, показывают хорошую стабильность, но для обычных домашних окон Gelios Nova G1 также достаточно надёжен.</p>
-      <p><span class="smallcaps">2. Простота управления</span><br>Новичкам важно, чтобы робот было легко запустить. У Gelios Nova G1 есть подсказки на корпусе, краткое руководство и понятная инструкция. Рекомендация: для первой покупки лучше подойдёт Gelios Nova G1.</p>
-      <p><span class="smallcaps">3. Качество уборки</span><br>Автоматическое распыление делает уборку удобнее. Даджет W220 лучше подходит для больших окон за счёт двойного распыления, а Gelios Nova G1 хорошо справляется с обычными окнами, зеркалами и плиткой.</p>
-      <p><span class="smallcaps">4. Комплектация</span><br>Cleanbot tex0121 выделяется 26 салфетками, но у Gelios Nova G1 комплект более универсальный: есть основные аксессуары, инструкция и сумка для хранения.</p>
-      <p><span class="smallcaps">5. Цена и выгода</span><br>Gelios Nova G1 стоит 4081 рублей и при этом предлагает автоматическое распыление, бак 70 мл, кабель питания 6 м и полный набор базовых аксессуаров.</p>
-      <p>Благодаря низкой цене, практичной комплектации и простому использованию Nova G1 занимает первое место в рейтинге и рекомендуется как выгодный выбор на 2026 год.</p>
+      <h2 class="section-title">На что мы обращали внимание при выборе робота-мойщика окон</h2>
+      <p>Чтобы понять, какой робот-мойщик окон лучше выбрать для дома в 2026 году, мы сравнили модели по нескольким практическим критериям: стабильность сцепления, простота управления, качество уборки, комплектация и соотношение цены с возможностями.</p>
+      <p><span class="smallcaps">1. Стабильность сцепления</span><br>Для безопасной уборки робот-мойщик окон должен уверенно держаться на стекле, не скользить и не сбиваться с маршрута. Более мощные модели, такие как Даджет W220 и CleanLo HCR-11, показывают хорошую стабильность, особенно на больших окнах. При этом для обычных домашних окон, балконов, зеркал и плитки Gelios Nova G1 также демонстрирует достаточную надежность.</p>
+      <p><span class="smallcaps">2. Простота управления</span><br>Для первой покупки особенно важно, чтобы устройство было легко запустить без долгой настройки. У Gelios Nova G1 есть подсказки на корпусе, краткое руководство и понятная инструкция, поэтому модель подходит даже тем, кто раньше не пользовался такой техникой. Если вы выбираете робот-мойщик окон для повседневного домашнего использования, Nova G1 выглядит наиболее понятным вариантом для новичков.</p>
+      <p><span class="smallcaps">3. Качество уборки</span><br>Робот-мойщик окон с распылением делает уборку удобнее, потому что помогает равномерно увлажнять поверхность и снижает количество ручных действий. Даджет W220 лучше подходит для больших окон за счет двойного распыления, а Gelios Nova G1 хорошо справляется с обычными окнами, зеркалами, плиткой и другими гладкими поверхностями в квартире.</p>
+      <p><span class="smallcaps">4. Комплектация</span><br>При выборе робота-мойщика окон важно учитывать не только сам прибор, но и то, что входит в комплект. Cleanbot tex0121 выделяется большим количеством салфеток — 26 штук, но у Gelios Nova G1 комплект более универсален для ежедневного использования: есть основные аксессуары, инструкция и сумка для хранения.</p>
+      <p><span class="smallcaps">5. Цена и выгода</span><br>Gelios Nova G1 стоит 4081 рублей и при этом предлагает автоматическое распыление, бак 70 мл, кабель питания 6 м и полный набор базовых аксессуаров. За счет низкой цены, понятного управления и практичной комплектации эта модель хорошо подходит тем, кто хочет купить робот-мойщик окон для дома без переплаты за лишние функции.</p>
+      <p><span class="smallcaps">Итог</span><br>Благодаря доступной цене, удобному запуску, автоматическому распылению и хорошей комплектации Gelios Nova G1 занимает первое место в нашем рейтинге роботов-мойщиков окон. Мы рекомендуем его как выгодный выбор для дома и один из лучших роботов-мойщиков окон 2026 года в своей ценовой категории.</p>
 
       <h2 class="section-title" style="margin-top:44px;">Обзоры на топового робота-мойщика окон от наших коллег</h2>
       <div class="review-image">
         <a href="https://dzen.ru/a/aiBTr0pnuSnhaljB" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/gelios-review.png" alt="Обзор Gelios Nova G1" />
+          <img src="assets/gelios-review.png" alt="Обзор Gelios Nova G1" />
         </a>
       </div>
     </div>
