@@ -155,11 +155,7 @@
       box-shadow: 0 4px 14px rgba(15,23,42,.08);
     }
     .mini-card.winner .rank {
-      background: #f4c62d;
-      color: #6c4b00;
-      min-width: 44px;
-      height: 44px;
-      font-size: 18px;
+      display: none;
     }
     .mini-title {
       position: absolute;
@@ -362,6 +358,9 @@
       border-radius: 14px;
       font-size: 15px;
     }
+    .rating-cards {
+      display: none;
+    }
     .rating-table th {
       background: #f4eedf;
       color: #786345;
@@ -390,20 +389,21 @@
       font-size: 18px;
     }
     .model-cell {
-      width: 210px;
+      width: 180px;
       color: var(--text) !important;
       font-weight: 800;
+      font-size: 15px;
     }
     .score-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 62px;
-      padding: 6px 10px;
+      min-width: 52px;
+      padding: 6px 8px;
       border-radius: 8px;
       background: #e9f9ee;
       color: #25b759;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 900;
       white-space: nowrap;
     }
@@ -425,7 +425,9 @@
     }
     .product-section-title {
       text-align: center;
-      font-size: 18px;
+      font-size: clamp(26px, 3.2vw, 34px);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
       font-weight: 850;
       margin: 0 0 34px;
       color: var(--text);
@@ -569,6 +571,9 @@
       background: #f6e5b1;
       transform: translateY(-1px);
     }
+    .btn.wildberries-btn {
+      display: none;
+    }
     .product-desc {
       color: #475569;
       font-size: 15px;
@@ -655,11 +660,154 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .rating-table {
-        display: block;
-        overflow-x: auto;
+        width: 100%;
+        overflow-x: hidden;
         white-space: normal;
       }
-      .rating-table table { min-width: 760px; }
+      .rating-table table {
+        width: 100%;
+        table-layout: fixed;
+      }
+      .rating-table th,
+      .rating-table td {
+        padding: 14px 12px;
+        white-space: normal;
+        word-break: break-word;
+      }
+      .rating-table th {
+        font-size: 11px;
+      }
+      .rating-table td {
+        font-size: 14px;
+      }
+      .rating-table th:nth-child(1),
+      .rating-table td:nth-child(1) {
+        width: 42px;
+      }
+      .rating-table th:nth-child(2),
+      .rating-table td:nth-child(2) {
+        width: 22%;
+        font-size: 14px;
+      }
+      .rating-table th:nth-child(3),
+      .rating-table td:nth-child(3) {
+        width: 48%;
+      }
+      .rating-table th:nth-child(4),
+      .rating-table td:nth-child(4) {
+        width: 18%;
+        font-size: 14px;
+      }
+      .rating-table .model-cell,
+      .rating-table .num {
+        min-width: 0;
+      }
+    }
+    @media (max-width: 768px) {
+      .rating-table {
+        display: none;
+      }
+      .rating-cards {
+        display: grid;
+        gap: 18px;
+      }
+      .rating-card {
+        border: 1px solid #e8eaef;
+        border-radius: 20px;
+        background: #fff;
+        box-shadow: 0 12px 28px rgba(15,23,42,.08);
+        padding: 20px 22px;
+      }
+      .rating-card:first-child {
+        background: #fff9e8;
+        border-color: #f4e0b4;
+      }
+      .rating-card-header {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        gap: 14px 16px;
+        align-items: start;
+      }
+      .rating-card-rank {
+        font-weight: 900;
+        font-size: 18px;
+        color: var(--text);
+      }
+      .rating-card:first-child .rating-card-rank {
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: #f4c62d;
+        color: #6c4b00;
+      }
+      .rating-card-model {
+        min-width: 0;
+        color: var(--text);
+        font-weight: 800;
+        font-size: 15px;
+        line-height: 1.4;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: normal;
+      }
+      .rating-card-model .editor-choice {
+        display: block;
+        margin-top: 8px;
+      }
+      .rating-card-header .score-badge {
+        justify-self: end;
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+      .rating-card-features {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      .product-card {
+        width: 100%;
+        padding: 32px 22px 22px;
+        overflow: visible;
+        box-shadow: 0 14px 34px rgba(15,23,42,.08);
+        border-color: #e7eaf0;
+      }
+      .product-score {
+        top: 22px;
+        right: 18px;
+      }
+      .product-card .place-tag {
+        position: static;
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 14px;
+        margin: 0 0 20px;
+        border-radius: 999px;
+        background: #f4c62d;
+        color: #6c4b00;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+      }
+      .product-card .brand-tag {
+        position: static;
+        margin-bottom: 18px;
+      }
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 14px 0;
+      }
+      .gallery img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
+      }
     }
     @media (max-width: 560px) {
       .hero { padding: 22px 0 40px; }
@@ -678,24 +826,69 @@
       }
       .mini-card, .mini-card.winner { min-height: 250px; }
       .section { padding: 28px 0; }
-      .section-title { margin-bottom: 18px; }
-      .section-subtitle { margin-bottom: 22px; }
+      .section-title {
+        margin-bottom: 18px;
+        font-size: 28px;
+        line-height: 1.18;
+      }
+      .product-section-title {
+        font-size: 28px;
+      }
+      .section-subtitle {
+        margin-bottom: 22px;
+        font-size: 15px;
+        line-height: 1.85;
+      }
+      .lead {
+        font-size: 15px;
+        line-height: 1.95;
+        margin-bottom: 26px;
+      }
+      .article-text {
+        font-size: 15px;
+        line-height: 1.95;
+      }
+      .article-text p { margin-bottom: 20px; }
+      .article-text h3 {
+        font-size: 17px;
+        margin: 26px 0 10px;
+      }
       .center-photo { margin: 36px auto 36px; }
-      .article-text p { margin-bottom: 18px; }
       .review-image { margin-top: 24px; }
-      .product-card { padding: 18px; margin-bottom: 32px; }
+      .product-card {
+        padding: 18px 16px;
+        margin-bottom: 30px;
+        box-shadow: 0 12px 28px rgba(15,23,42,.06);
+      }
       .product-main { grid-template-columns: 1fr; margin-top: 28px; gap: 20px; }
       .brand-tag { display: none; }
       .product-score { position: static; margin: 18px 0 0; display: inline-block; }
+      .product-desc { margin: 18px 0 16px; }
       .gallery {
         grid-template-columns: 1fr;
+        gap: 12px;
       }
       .product-image {
         aspect-ratio: 1 / 1;
       }
-      .rating-table td { padding: 18px 16px; }
+      .rating-table th { font-size: 11px; }
+      .rating-table td { font-size: 13px; }
+      .rating-table .score-badge { font-size: 14px; padding: 5px 8px; }
     }
   </style>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110235588', 'ym');
+
+      ym(110235588, 'init', {ssr:true, webvisor:true, trackHash:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/110235588" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 <div class="page">
@@ -854,35 +1047,77 @@
           <tr>
             <td class="num">♕</td>
             <td class="model-cell">Gelios Nova G1<br><span class="editor-choice">🏆 Выбор редакции</span></td>
-            <td>Наиболее сбалансирован по эффективности очистки, ценовому преимуществу и практичности комплектации. Хотя это не самая сильная модель по отдельным функциям, она имеет самую низкую цену, полную комплектацию и более удобное управление для новичков.</td>
+            <td>Круглый робот-мойщик окон с распылением: идеальный баланс очистки и цены, полная комплектация, простое управление для новичков.</td>
             <td><span class="score-badge">10/10</span></td>
           </tr>
           <tr>
             <td class="num">2</td>
             <td class="model-cell">Даджет W220</td>
-            <td>Лучше всего показывает себя по качеству очистки. Двойное распыление воды, мощность 90 Вт и поддержка безрамной очистки являются его главными преимуществами.</td>
+            <td>Высокая эффективность очистки: распыление, 90 Вт, безрамная мойка.</td>
             <td><span class="score-badge">9/10</span></td>
           </tr>
           <tr>
             <td class="num">3</td>
             <td class="model-cell">Cleanbot tex0121</td>
-            <td>Отличается высокой практичностью комплектации: особенно привлекательны 26 чистящих салфеток и поддержка безрамной очистки, однако отсутствие автоматического распыления снижает удобство уборки.</td>
+            <td>Много аксессуаров, 26 салфеток, минус — отсутствие автопыления.</td>
             <td><span class="score-badge warn">7/10</span></td>
           </tr>
           <tr>
             <td class="num">4</td>
             <td class="model-cell">Rutbot L200</td>
-            <td>Функциональность довольно широкая, также поддерживает безрамную очистку и защиту батареи, однако имеет самую высокую цену и небольшой объём резервуара для воды.</td>
+            <td>Много полезных функций, есть безрамная мойка и защита аккумулятора, но цена высокая, резервуар для воды маленький.</td>
             <td><span class="score-badge warn">6/10</span></td>
           </tr>
           <tr>
             <td class="num">5</td>
             <td class="model-cell">CleanLo HCR-11</td>
-            <td>Базовая эффективность очистки неплохая, есть одинарное распыление, резервуар 50 мл и мощность 90 Вт, но ценовые и конфигурационные преимущества выражены не так явно.</td>
+            <td>Средняя очистка: одинарное распыление, 50 мл бак, 90 Вт, нет выгод по цене и комплектации.</td>
             <td><span class="score-badge low">5/10</span></td>
           </tr>
         </tbody>
       </table>
+      <div class="rating-cards">
+        <article class="rating-card">
+          <div class="rating-card-header">
+            <div class="rating-card-rank">1</div>
+            <div class="rating-card-model">Gelios Nova G1<br><span class="editor-choice">🏆 Выбор редакции</span></div>
+            <span class="score-badge">10/10</span>
+          </div>
+          <p class="rating-card-features">Круглый робот-мойщик окон с распылением: идеальный баланс очистки и цены, полная комплектация, простое управление для новичков.</p>
+        </article>
+        <article class="rating-card">
+          <div class="rating-card-header">
+            <div class="rating-card-rank">2</div>
+            <div class="rating-card-model">Даджет W220</div>
+            <span class="score-badge">9/10</span>
+          </div>
+          <p class="rating-card-features">Высокая эффективность очистки: распыление, 90 Вт, безрамная мойка.</p>
+        </article>
+        <article class="rating-card">
+          <div class="rating-card-header">
+            <div class="rating-card-rank">3</div>
+            <div class="rating-card-model">Cleanbot tex0121</div>
+            <span class="score-badge warn">7/10</span>
+          </div>
+          <p class="rating-card-features">Много аксессуаров, 26 салфеток, минус — отсутствие автопыления.</p>
+        </article>
+        <article class="rating-card">
+          <div class="rating-card-header">
+            <div class="rating-card-rank">4</div>
+            <div class="rating-card-model">Rutbot L200</div>
+            <span class="score-badge warn">6/10</span>
+          </div>
+          <p class="rating-card-features">Много полезных функций, есть безрамная мойка и защита аккумулятора, но цена высокая, резервуар для воды маленький.</p>
+        </article>
+        <article class="rating-card">
+          <div class="rating-card-header">
+            <div class="rating-card-rank">5</div>
+            <div class="rating-card-model">CleanLo HCR-11</div>
+            <span class="score-badge low">5/10</span>
+          </div>
+          <p class="rating-card-features">Средняя очистка: одинарное распыление, 50 мл бак, 90 Вт, нет выгод по цене и комплектации.</p>
+        </article>
+      </div>
 
       <div class="center-photo">
         <img src="/assets/window-use-2.gif" alt="Робот-мойщик на окне" />
@@ -897,7 +1132,7 @@
       <article class="product-card">
         <div class="place-tag">1 место — лучший выбор 2026</div>
         <div class="brand-tag">Gelios</div>
-        <div class="product-score">10/10</div>
+        <div class="product-score score-badge">10/10</div>
         <div class="product-main">
           <div class="product-image"><img src="/assets/gelios-square.jpg" alt="Gelios Nova G1" /></div>
           <div class="product-info">
@@ -912,8 +1147,8 @@
             </ul>
             <div class="buy-row">
               <span class="price">4 081 ₽</span>
-              <a class="btn" href="#">Купить на Ozon</a>
-              <a class="btn" href="#">Купить на Wildberries</a>
+              <a class="btn" href="https://ozon.onelink.me/SNMZ?af_dp=https://ozon.ru/product/4354166505/&af_web_dp=https://ozon.ru/product/4354166505/&is_retargeting=true&c=vendor_org_1067507&pid=yandex_direct|article&hs=1&utm_source=yandex_direct&utm_medium=article&utm_campaign=vendor_org_1067507">Купить на Ozon</a>
+              <a class="btn wildberries-btn" href="#">Купить на Wildberries</a>
             </div>
           </div>
         </div>
@@ -929,7 +1164,7 @@
       <article class="product-card">
         <div class="place-tag">2 место</div>
         <div class="brand-tag">Даджет</div>
-        <div class="product-score">9/10</div>
+        <div class="product-score score-badge">9/10</div>
         <div class="product-main">
           <div class="product-image"><img src="/assets/dadjet-square.jpg" alt="Даджет W220" /></div>
           <div class="product-info">
@@ -942,8 +1177,8 @@
             </ul>
             <div class="buy-row">
               <span class="price">5 359 ₽</span>
-              <a class="btn" href="#">Купить на Ozon</a>
-              <a class="btn" href="#">Купить на Wildberries</a>
+              <a class="btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-dadzhet-w220-moyshchik-okon-robot-s-raspyleniem-so-smennymi-salfetkami-12-sht-1545770565/?abt_att=1&at=XQtkRkox1FAY0nOsXGqyZQfg3rlmNcO2ykPqhNXQAJQ%E4%BB%B7%E6%A0%BC%EF%BC%9A5359%E5%8D%A2%E5%B8%83">Купить на Ozon</a>
+              <a class="btn" href="https://www.wildberries.ru/catalog/224314192/detail.aspx">Купить на Wildberries</a>
             </div>
           </div>
         </div>
@@ -959,7 +1194,7 @@
       <article class="product-card">
         <div class="place-tag">3 место</div>
         <div class="brand-tag">Cleanbot</div>
-        <div class="product-score">7/10</div>
+        <div class="product-score score-badge warn">7/10</div>
         <div class="product-main">
           <div class="product-image"><img src="/assets/cleanbot-square.jpg" alt="Cleanbot tex0121" /></div>
           <div class="product-info">
@@ -973,7 +1208,7 @@
             </ul>
             <div class="buy-row">
               <span class="price">5 206 ₽</span>
-              <a class="btn" href="#">Купить на Ozon</a>
+              <a class="btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-cleanbot-so-smennymi-salfetkami-26-sht-teh0121-677452159/?at=x6tPVPo2yFPX4G4gsW213NRi59E5BkUg99Xw4sN0X0o">Купить на Ozon</a>
             </div>
           </div>
         </div>
@@ -989,7 +1224,7 @@
       <article class="product-card">
         <div class="place-tag">4 место</div>
         <div class="brand-tag">Rutbot</div>
-        <div class="product-score">6/10</div>
+        <div class="product-score score-badge warn">6/10</div>
         <div class="product-main">
           <div class="product-image"><img src="/assets/rutbot-square.jpg" alt="Rutbot L200" /></div>
           <div class="product-info">
@@ -1003,7 +1238,7 @@
             </ul>
             <div class="buy-row">
               <span class="price">7 240 ₽</span>
-              <a class="btn" href="#">Купить на Ozon</a>
+              <a class="btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-rutbot-l200-robot-moyshchik-okon-s-raspyleniem-855586968/?at=83tB0Bp7lslZjMGBCRn5O40HQyKnr1TQV0XRkFq0k0pV">Купить на Ozon</a>
             </div>
           </div>
         </div>
@@ -1019,7 +1254,7 @@
       <article class="product-card">
         <div class="place-tag">5 место</div>
         <div class="brand-tag">CleanLo</div>
-        <div class="product-score">5/10</div>
+        <div class="product-score score-badge low">5/10</div>
         <div class="product-main">
           <div class="product-image"><img src="/assets/cleanlo-square.jpg" alt="CleanLo HCR-11" /></div>
           <div class="product-info">
@@ -1033,7 +1268,7 @@
             </ul>
             <div class="buy-row">
               <span class="price">5 543 ₽</span>
-              <a class="btn" href="#">Купить на Ozon</a>
+              <a class="btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-robot-moyshchik-okon-s-raspyleniem-cleanlo-1743780966/?at=oZt6R637MuEYg2ZJtq7OPRXCjP1Ew1cP7L6jKsBvVDEn">Купить на Ozon</a>
             </div>
           </div>
         </div>
@@ -1060,7 +1295,9 @@
 
       <h2 class="section-title" style="margin-top:44px;">Обзоры на топового робота-мойщика окон от наших коллег</h2>
       <div class="review-image">
-        <img src="/assets/gelios-review.png" alt="Обзор Gelios Nova G1" />
+        <a href="https://dzen.ru/a/aiBTr0pnuSnhaljB" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/gelios-review.png" alt="Обзор Gelios Nova G1" />
+        </a>
       </div>
     </div>
   </section>
