@@ -120,9 +120,13 @@
       background: #fff;
       box-shadow: 0 8px 20px rgba(15,23,42,.08);
       transition: transform .25s ease, box-shadow .25s ease;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
     .mini-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       box-shadow: 0 18px 36px rgba(15,23,42,.12);
     }
     .mini-card.winner {
@@ -444,6 +448,7 @@
       margin-bottom: 46px;
       box-shadow: 0 18px 45px rgba(15,23,42,.08);
       transition: transform .25s ease, box-shadow .25s ease;
+      scroll-margin-top: 24px;
     }
     .product-card:hover {
       transform: translateY(-2px);
@@ -810,6 +815,7 @@
       }
     }
     @media (max-width: 560px) {
+      .product-card { scroll-margin-top: 32px; }
       .hero { padding: 22px 0 40px; }
       .hero-title { font-size: 34px; margin-bottom: 14px; }
       .subtitle { font-size: 16px; margin-bottom: 24px; }
@@ -911,32 +917,32 @@
       </div>
 
       <div class="product-strip">
-        <div class="mini-card winner">
+        <a class="mini-card winner" href="#gelios-detail">
           <img src="/assets/gelios-card.jpg" alt="Gelios Nova G1" />
           <div class="mini-title"><span>Gelios</span><b>Nova G1</b></div>
           <div class="rank">♕</div>
           <div class="best-label">★ ЛУЧШИЙ</div>
-        </div>
-        <div class="mini-card">
+        </a>
+        <a class="mini-card" href="#dadjet-detail">
           <img src="/assets/dadjet-card.jpg" alt="Даджет W220" />
           <div class="mini-title"><span>Даджет</span><b>W220</b></div>
           <div class="rank">#2</div>
-        </div>
-        <div class="mini-card">
+        </a>
+        <a class="mini-card" href="#cleanbot-detail">
           <img src="/assets/cleanbot-card.jpg" alt="Cleanbot tex0121" />
           <div class="mini-title"><span>Cleanbot</span><b>tex0121</b></div>
           <div class="rank">#3</div>
-        </div>
-        <div class="mini-card">
+        </a>
+        <a class="mini-card" href="#rutbot-detail">
           <img src="/assets/rutbot-card.jpg" alt="Rutbot L200" />
           <div class="mini-title"><span>Rutbot</span><b>L200</b></div>
           <div class="rank">#4</div>
-        </div>
-        <div class="mini-card">
+        </a>
+        <a class="mini-card" href="#cleanlo-detail">
           <img src="/assets/cleanlo-card.jpg" alt="CleanLo HCR-11" />
           <div class="mini-title"><span>CleanLo</span><b>HCR-11</b></div>
           <div class="rank">#5</div>
-        </div>
+        </a>
       </div>
 
       <p class="lead">Покупать робота-мойщика окон стоит не только по характеристикам на бумаге. Важнее понять, как он работает в обычной квартире: держится ли на стекле, легко ли запускается, хорошо ли очищает поверхность и оправдывает ли свою цену. Команда RusTech Review при выборе актуальных моделей на 2026 год ориентировалась не на рекламные функции, а на практичность для повседневного использования в российских домах — особенно в квартирах, на балконах, больших окнах, зеркалах и плитке.</p>
@@ -1129,7 +1135,7 @@
     <div class="container">
       <h2 class="product-section-title">Подробнее о каждом номинанте</h2>
 
-      <article class="product-card">
+      <article class="product-card" id="gelios-detail">
         <div class="place-tag">1 место — лучший выбор 2026</div>
         <div class="brand-tag">Gelios</div>
         <div class="product-score score-badge">10/10</div>
@@ -1161,7 +1167,7 @@
         <div class="includes"><strong>В комплект Gelios Nova G1 входят:</strong><br>пульт ДУ, распылитель, бутылочка для воды, трос, 10 салфеток, 4 чистящих кольца, инструкция и сумка для хранения.</div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card" id="dadjet-detail">
         <div class="place-tag">2 место</div>
         <div class="brand-tag">Даджет</div>
         <div class="product-score score-badge">9/10</div>
@@ -1191,7 +1197,7 @@
         <div class="includes"><strong>В комплект Даджет W220 входят:</strong><br>кабель питания, страховочный трос, распылитель, пульт ДУ, салфетки, 4 чистящих кольца, пользовательская инструкция и гарантийный талон.</div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card" id="cleanbot-detail">
         <div class="place-tag">3 место</div>
         <div class="brand-tag">Cleanbot</div>
         <div class="product-score score-badge warn">7/10</div>
@@ -1221,7 +1227,7 @@
         <div class="includes"><strong>В комплект Cleanbot tex0121 входит:</strong><br>кабель питания, страховочный трос, распылитель, пульт ДУ, 12 салфеток, 4 чистящих кольца и инструкция пользователя.</div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card" id="rutbot-detail">
         <div class="place-tag">4 место</div>
         <div class="brand-tag">Rutbot</div>
         <div class="product-score score-badge warn">6/10</div>
@@ -1251,7 +1257,7 @@
         <div class="includes"><strong>В комплект Rutbot L200 входит:</strong><br>кабель питания, страховочный трос, распылитель, бутылочка для воды, пульт ДУ, салфетки и инструкция.</div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card" id="cleanlo-detail">
         <div class="place-tag">5 место</div>
         <div class="brand-tag">CleanLo</div>
         <div class="product-score score-badge low">5/10</div>
