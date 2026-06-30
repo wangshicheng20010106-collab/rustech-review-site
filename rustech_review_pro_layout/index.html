@@ -50,8 +50,8 @@
       margin: 0 0 12px;
       font-size: clamp(38px, 5.3vw, 64px);
       line-height: 1.04;
-      letter-spacing: -0.045em;
-      font-weight: 850;
+      letter-spacing: -0.015em;
+      font-weight: 760;
       white-space: normal;
       overflow-wrap: break-word;
       word-break: normal;
@@ -108,8 +108,17 @@
       display: grid;
       grid-template-columns: 1.2fr repeat(4, 1fr);
       gap: 18px;
-      align-items: end;
+      align-items: start;
       margin-bottom: 58px;
+    }
+    .article-product-strip {
+      margin: 34px 0 0;
+    }
+    .mini-card-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
     }
     .mini-card {
       position: relative;
@@ -186,6 +195,15 @@
       font-size: 18px;
       color: #111827;
     }
+    .mini-detail-note {
+      display: block;
+      margin-top: 8px;
+      font-size: 11px;
+      font-weight: 750;
+      color: #6b7280;
+      letter-spacing: 0;
+      text-transform: none;
+    }
     .best-label {
       position: absolute;
       left: 50%;
@@ -198,6 +216,54 @@
       border-radius: 999px;
       font-size: 13px;
       font-weight: 850;
+    }
+    .mini-actions {
+      display: grid;
+      gap: 8px;
+    }
+    .mini-buy-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      color: #111827;
+      line-height: 1;
+    }
+    .mini-price {
+      font-size: 20px;
+      font-weight: 950;
+    }
+    .mini-score {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #eafff1;
+      color: #22b85f;
+      font-size: 14px;
+      font-weight: 950;
+    }
+    .mini-buy-buttons {
+      display: grid;
+      gap: 8px;
+    }
+    .mini-buy-btn {
+      min-height: 38px;
+      padding: 9px 10px;
+      border-radius: 999px;
+      border: 2px solid #e9c66f;
+      background: #fff1c4;
+      color: #5f430b;
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 8px 18px rgba(105, 75, 18, .1);
+      transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    .mini-buy-btn:hover {
+      background: #ffe59a;
+      border-color: #d9aa34;
+      box-shadow: 0 12px 24px rgba(105, 75, 18, .16);
+      transform: translateY(-2px);
     }
     .lead {
       width: 100%;
@@ -407,6 +473,67 @@
       font-weight: 850;
       font-size: 18px;
     }
+    .article-table-block {
+      margin: 34px 0;
+    }
+    .article-table-title {
+      margin: 0 0 14px;
+      color: var(--text);
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 900;
+    }
+    .article-table-scroll {
+      overflow-x: auto;
+      border: 1px solid #ded8c4;
+      border-radius: 14px;
+      background: #fff;
+    }
+    .article-table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 15px;
+    }
+    .article-mobile-cards {
+      display: none;
+    }
+    .article-table th {
+      background: #f4eedf;
+      color: #786345;
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: 13px;
+      padding: 17px 20px;
+      line-height: 1.2;
+    }
+    .article-table td {
+      padding: 20px;
+      border-top: 1px solid #e5e7eb;
+      color: var(--muted);
+      line-height: 1.7;
+      vertical-align: top;
+    }
+    .article-table tbody tr:first-child td {
+      background: #fff9e8;
+    }
+    .article-table strong {
+      color: var(--text);
+      font-weight: 850;
+    }
+    .article-table .price-cell {
+      color: var(--text);
+      font-weight: 850;
+      white-space: nowrap;
+    }
+    .article-table .rating-stars {
+      color: #f0b90b;
+      font-weight: 850;
+      white-space: nowrap;
+      letter-spacing: .04em;
+    }
     .model-cell {
       width: 180px;
       color: var(--text) !important;
@@ -569,30 +696,32 @@
       margin-bottom: 0;
     }
     .price {
-      font-size: 22px;
+      font-size: 30px;
       font-weight: 900;
       color: #111827;
+      line-height: 1;
     }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      height: 38px;
-      padding: 0 18px;
+      min-width: 180px;
+      height: 48px;
+      padding: 0 26px;
       border-radius: 999px;
-      border: 1px solid #ead6aa;
-      background: #fff6df;
-      color: #694b12;
-      font-size: 13px;
-      font-weight: 800;
-      transition: background .2s ease, transform .2s ease;
+      border: 2px solid #e9c66f;
+      background: #fff1c4;
+      color: #5f430b;
+      font-size: 16px;
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(105, 75, 18, .12);
+      transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
     }
     .btn:hover {
-      background: #f6e5b1;
-      transform: translateY(-1px);
-    }
-    .btn.wildberries-btn {
-      display: none;
+      background: #ffe59a;
+      border-color: #d9aa34;
+      box-shadow: 0 12px 24px rgba(105, 75, 18, .18);
+      transform: translateY(-2px);
     }
     .product-desc {
       color: #475569;
@@ -601,20 +730,37 @@
       margin: 24px 0 22px;
     }
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      display: flex;
       gap: 14px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
       padding: 18px 0;
       border-top: 1px solid #edf0f4;
       border-bottom: 1px solid #edf0f4;
       margin-bottom: 18px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e1 transparent;
+    }
+    .gallery::-webkit-scrollbar {
+      height: 8px;
+    }
+    .gallery::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .gallery::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 999px;
     }
     .gallery img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
+      flex: 0 0 min(72vw, 760px);
+      width: min(72vw, 760px);
+      height: auto;
+      object-fit: contain;
+      background: #f8fafc;
       border-radius: 16px;
       border: 1px solid #e5e7eb;
+      scroll-snap-align: start;
     }
     .includes {
       background: #fffaf0;
@@ -628,19 +774,37 @@
     .text-review {
       padding: 38px 0 70px;
     }
-    .review-image {
+    .review-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 380px);
+      gap: 16px;
       margin-top: 28px;
+      justify-content: start;
+      align-items: start;
+    }
+    .review-image {
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 1px 0 rgba(0,0,0,.06);
       width: 100%;
+      aspect-ratio: 3 / 2;
+      background: #f8fafc;
+    }
+    .review-image a {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
     .review-image img {
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: contain;
       display: block;
       max-width: 100%;
+    }
+    .review-image.portrait-review {
+      aspect-ratio: 594 / 1004;
+      background: #fff;
     }
     .smallcaps {
       font-weight: 850;
@@ -677,6 +841,13 @@
         object-fit: cover;
       }
       .gallery {
+        padding-bottom: 20px;
+      }
+      .gallery img {
+        flex-basis: min(78vw, 640px);
+        width: min(78vw, 640px);
+      }
+      .review-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .rating-table {
@@ -730,6 +901,29 @@
       .rating-cards {
         display: grid;
         gap: 18px;
+      }
+      .article-table-scroll {
+        display: none;
+      }
+      .article-mobile-cards {
+        display: grid;
+        gap: 18px;
+      }
+      .article-mobile-cards .rating-card-header {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+      }
+      .article-mobile-cards .rating-card-model span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-weight: 500;
+        line-height: 1.65;
+      }
+      .article-mobile-cards .price-cell {
+        justify-self: end;
+        color: var(--text);
+        font-weight: 900;
+        white-space: nowrap;
       }
       .rating-card {
         border: 1px solid #e8eaef;
@@ -817,15 +1011,14 @@
         margin-bottom: 18px;
       }
       .gallery {
-        grid-template-columns: 1fr;
         gap: 14px;
         padding: 14px 0;
       }
       .gallery img {
-        width: 100%;
+        flex-basis: min(86vw, 520px);
+        width: min(86vw, 520px);
         max-width: 100%;
         height: auto;
-        aspect-ratio: auto;
         object-fit: contain;
       }
     }
@@ -878,7 +1071,10 @@
       }
       .center-photo { margin: 36px auto 36px; }
       .criteria-photo { margin-bottom: 8px; }
-      .review-image { margin-top: 24px; }
+      .review-grid {
+        grid-template-columns: 1fr;
+        margin-top: 24px;
+      }
       .product-card {
         padding: 18px 16px;
         margin-bottom: 30px;
@@ -889,7 +1085,6 @@
       .product-score { position: static; margin: 18px 0 0; display: inline-block; }
       .product-desc { margin: 18px 0 16px; }
       .gallery {
-        grid-template-columns: 1fr;
         gap: 12px;
       }
       .product-image {
@@ -934,35 +1129,6 @@
         <img src="assets/hero-top5.png" alt="ТОП-5 роботов-мойщиков окон 2026" />
       </div>
 
-      <div class="product-strip">
-        <a class="mini-card winner" href="#gelios-detail">
-          <img src="assets/gelios-card.jpg" alt="Gelios Nova G1" />
-          <div class="mini-title"><span>Gelios</span><b>Nova G1</b></div>
-          <div class="rank">♕</div>
-          <div class="best-label">★ ЛУЧШИЙ</div>
-        </a>
-        <a class="mini-card" href="#dadjet-detail">
-          <img src="assets/dadjet-card.jpg" alt="Даджет W220" />
-          <div class="mini-title"><span>Даджет</span><b>W220</b></div>
-          <div class="rank">#2</div>
-        </a>
-        <a class="mini-card" href="#cleanbot-detail">
-          <img src="assets/cleanbot-card.jpg" alt="Cleanbot tex0121" />
-          <div class="mini-title"><span>Cleanbot</span><b>tex0121</b></div>
-          <div class="rank">#3</div>
-        </a>
-        <a class="mini-card" href="#rutbot-detail">
-          <img src="assets/rutbot-card.jpg" alt="Rutbot L200" />
-          <div class="mini-title"><span>Rutbot</span><b>L200</b></div>
-          <div class="rank">#4</div>
-        </a>
-        <a class="mini-card" href="#cleanlo-detail">
-          <img src="assets/cleanlo-card.jpg" alt="CleanLo HCR-11" />
-          <div class="mini-title"><span>CleanLo</span><b>HCR-11</b></div>
-          <div class="rank">#5</div>
-        </a>
-      </div>
-
       <p class="lead">Покупать робот-мойщик окон стоит не только по характеристикам на бумаге. Намного важнее понять, как он работает в обычной квартире: надежно ли держится на стекле, легко ли запускается, хорошо ли очищает поверхность и действительно ли оправдывает свою цену.</p>
       <p class="lead">При подготовке рейтинга роботов-мойщиков окон на 2026 год команда RusTech Review ориентировалась не на рекламные функции, а на практичность в повседневном использовании в российских домах.</p>
       <p class="lead">Мы учитывали, какой робот-мойщик окон лучше подходит для квартир, балконов, больших окон, зеркал и плитки, а также насколько удобны модели с распылением, автоматическим построением маршрута и простым управлением. Такой подход помогает понять, как выбрать робот-мойщик окон и на что обратить внимание перед покупкой.</p>
@@ -971,28 +1137,28 @@
 
   <section class="section criteria-section">
     <div class="narrow">
-      <h2 class="section-title">На что мы обращали внимание при выборе робота-мойщика окон</h2>
-      <p class="section-subtitle">Чтобы понять, какой робот-мойщик окон лучше подходит для повседневного использования, важно смотреть не только на характеристики, но и на реальные сценарии уборки. Ниже — 5 ключевых критериев, по которым мы оценивали модели для рейтинга роботов-мойщиков окон 2026 года.</p>
+      <h2 class="section-title">Как выбрать робот мойщик окон: 5 ключевых критериев покупки</h2>
+      <p class="section-subtitle">Чтобы купить робот-мойщик окон, который действительно решит задачи по уборке, важно ориентироваться не только на технические характеристики, но и на реальные сценарии использования. Ниже — простая инструкция, как выбрать робот мойщик окон для дома, квартиры или офиса.</p>
       <ol class="criteria-list">
         <li>
-          <h3>Стабильное сцепление со стеклом</h3>
-          <p>Хороший робот-мойщик окон должен уверенно держаться на поверхности, не скользить и не сбиваться с маршрута. Для квартир на высоких этажах, балконов и больших окон это один из самых важных показателей безопасности.</p>
+          <h3>Надёжное присасывание — залог безопасности</h3>
+          <p>Лучший робот мойщик окон должен уверенно держаться на стекле, не скользить и не сбиваться с маршрута. Это особенно важно для мойки на высоких этажах, панорамных окон и балконов. Обращайте внимание на мощность вакуумного присасывания и наличие страховочного троса.</p>
         </li>
         <li>
-          <h3>Простое управление</h3>
-          <p>Лучшие роботы-мойщики окон должны быть понятны даже новичку. Удобный пульт, простые режимы, понятная инструкция и подсказки на корпусе делают запуск и ежедневное использование намного проще.</p>
+          <h3>Простое управление — без долгой настройки</h3>
+          <p>Топ роботов мойщиков окон отличается понятным запуском. Удобный пульт, понятные режимы на корпусе и чёткая инструкция делают автоматическую мойку окон доступной даже новичкам. Не переплачивайте за сложные приложения, если вам нужна быстрая уборка.</p>
         </li>
         <li>
-          <h3>Качество уборки</h3>
-          <p>Мы оценивали, насколько хорошо устройство справляется с пылью, следами воды, разводами и обычными загрязнениями. Робот-мойщик окон с распылением получает дополнительное преимущество, потому что помогает равномерно увлажнять поверхность и делает уборку менее хлопотной.</p>
+          <h3>Качество очистки — вода и разводы</h3>
+          <p>Робот-мойщик окон с распылением равномерно увлажняет поверхность, снижая количество ручных действий. Особенно эффективны модели с автоматическим распылением и двойным распылителем — они лучше справляются с пылью, следами воды и разводами.</p>
         </li>
         <li>
-          <h3>Комплектация</h3>
-          <p>При выборе робота-мойщика окон важно учитывать, что входит в комплект. Чем больше салфеток, чистящих колец и полезных аксессуаров поставляется вместе с устройством, тем меньше дополнительных расходов после покупки.</p>
+          <h3>Комплектация и расходники</h3>
+          <p>Чем больше сменных салфеток, чистящих колец и полезных аксессуаров в комплекте, тем ниже затраты после покупки. Проверяйте наличие микрофибры, шнура и сумки для хранения.</p>
         </li>
         <li>
-          <h3>Цена и практичность</h3>
-          <p>Самая дорогая модель не всегда оказывается лучшей. Для большинства пользователей важнее, чтобы робот-мойщик окон за разумную цену решал основные задачи: надежно держался на стекле, качественно мыл окна, был простым в управлении и подходил для регулярного использования дома.</p>
+          <h3>Цена и выгода</h3>
+          <p>Робот мойщик окон недорого — не значит плохо. Самая дорогая модель не всегда лучше. Для регулярной уборки дома важнее, чтобы прибор за разумную цену надёжно держался на стекле, мыл без разводов и был простым в управлении.</p>
         </li>
       </ol>
       <div class="center-photo criteria-photo">
@@ -1174,7 +1340,7 @@
             <div class="buy-row">
               <span class="price">4 081 ₽</span>
               <a class="btn" href="https://ozon.onelink.me/SNMZ?af_dp=https://ozon.ru/product/4354166505/&af_web_dp=https://ozon.ru/product/4354166505/&is_retargeting=true&c=vendor_org_1067507&pid=yandex_direct|article&hs=1&utm_source=yandex_direct&utm_medium=article&utm_campaign=vendor_org_1067507">Купить на Ozon</a>
-              <a class="btn wildberries-btn" href="#">Купить на Wildberries</a>
+              <a class="btn" href="https://wildberries.ru/catalog/0/search.aspx?search=WW497233">Купить на Wildberries</a>
             </div>
           </div>
         </div>
@@ -1311,20 +1477,237 @@
 
   <section class="text-review">
     <div class="container article-text">
-      <h2 class="section-title">На что мы обращали внимание при выборе робота-мойщика окон</h2>
-      <p>Чтобы понять, какой робот-мойщик окон лучше выбрать для дома в 2026 году, мы сравнили модели по нескольким практическим критериям: стабильность сцепления, простота управления, качество уборки, комплектация и соотношение цены с возможностями.</p>
-      <p><span class="smallcaps">1. Стабильность сцепления</span><br>Для безопасной уборки робот-мойщик окон должен уверенно держаться на стекле, не скользить и не сбиваться с маршрута. Более мощные модели, такие как Даджет W220 и CleanLo HCR-11, показывают хорошую стабильность, особенно на больших окнах. При этом для обычных домашних окон, балконов, зеркал и плитки Gelios Nova G1 также демонстрирует достаточную надежность.</p>
-      <p><span class="smallcaps">2. Простота управления</span><br>Для первой покупки особенно важно, чтобы устройство было легко запустить без долгой настройки. У Gelios Nova G1 есть подсказки на корпусе, краткое руководство и понятная инструкция, поэтому модель подходит даже тем, кто раньше не пользовался такой техникой. Если вы выбираете робот-мойщик окон для повседневного домашнего использования, Nova G1 выглядит наиболее понятным вариантом для новичков.</p>
-      <p><span class="smallcaps">3. Качество уборки</span><br>Робот-мойщик окон с распылением делает уборку удобнее, потому что помогает равномерно увлажнять поверхность и снижает количество ручных действий. Даджет W220 лучше подходит для больших окон за счет двойного распыления, а Gelios Nova G1 хорошо справляется с обычными окнами, зеркалами, плиткой и другими гладкими поверхностями в квартире.</p>
-      <p><span class="smallcaps">4. Комплектация</span><br>При выборе робота-мойщика окон важно учитывать не только сам прибор, но и то, что входит в комплект. Cleanbot tex0121 выделяется большим количеством салфеток — 26 штук, но у Gelios Nova G1 комплект более универсален для ежедневного использования: есть основные аксессуары, инструкция и сумка для хранения.</p>
-      <p><span class="smallcaps">5. Цена и выгода</span><br>Gelios Nova G1 стоит 4081 рублей и при этом предлагает автоматическое распыление, бак 70 мл, кабель питания 6 м и полный набор базовых аксессуаров. За счет низкой цены, понятного управления и практичной комплектации эта модель хорошо подходит тем, кто хочет купить робот-мойщик окон для дома без переплаты за лишние функции.</p>
-      <p><span class="smallcaps">Итог</span><br>Благодаря доступной цене, удобному запуску, автоматическому распылению и хорошей комплектации Gelios Nova G1 занимает первое место в нашем рейтинге роботов-мойщиков окон. Мы рекомендуем его как выгодный выбор для дома и один из лучших роботов-мойщиков окон 2026 года в своей ценовой категории.</p>
+      <h2 class="section-title">Рейтинг роботов-мойщиков окон 2026: сравнение 5 моделей и рекомендации</h2>
+      <p>На основе описанных выше критериев мы провели обзор роботов-мойщиков окон и сравнили 5 популярных моделей: Gelios Nova G1, Даджет W220, Cleanbot tex0121, Rutbot L200 и CleanLo HCR-11. Результаты помогут понять, какой робот-мойщик окон лучше для ваших задач.</p>
+      <p><span class="smallcaps">Присасывание и безопасность</span><br>Даджет W220 и CleanLo HCR-11 (90 Вт) — мощное вакуумное присасывание, уверенно держатся на больших стеклах.<br>Gelios Nova G1 — стабильная фиксация на обычных окнах, зеркалах и плитке.<br>Rutbot L200 — есть встроенный аккумулятор как защита при отключении питания, но сила присасывания средняя.<br>Cleanbot tex0121 (75 Вт) — достаточно для стандартных сценариев, но на толстых стеклах уступает более мощным моделям.</p>
+      <p><span class="smallcaps">Управление и запуск</span><br>Gelios Nova G1 — подсказки на корпусе, краткая инструкция, минимальные настройки. Идеален, если вы ищете робот мойщик окон для первой покупки.<br>Rutbot L200 — много функций, но выше порог входа.<br>Остальные модели требуют знакомства с пультом или приложением.</p>
+      <p><span class="smallcaps">Качество мойки и распыление</span><br>Даджет W220 — двойное распыление, большая площадь покрытия, отлично подходит для панорамных окон.<br>Gelios Nova G1 — ультразвуковое распыление, бак 70 мл, хорошо справляется с повседневной пылью и зеркалами.<br>Rutbot L200 — ультразвуковое распыление есть, но резервуар маленький: при больших объёмах придётся чаще доливать воду.<br>CleanLo HCR-11 — одинарное распыление, бак 50 мл, средний результат.<br>Cleanbot tex0121 — автоматическое распыление отсутствует, требуется ручное увлажнение. Подходит для лёгкой поддерживающей уборки.</p>
+      <p><span class="smallcaps">Комплектация</span><br>Cleanbot tex0121 — 26 салфеток в комплекте, рекорд по количеству расходников.<br>Gelios Nova G1 — 10 салфеток + 4 чистящих кольца + сумка для хранения + инструкция. Универсальный набор для ежедневного использования.<br>Даджет W220 и CleanLo HCR-11 — стандартные аксессуары, без сумки.<br>Rutbot L200 — базовый комплект, не оправдывающий высокую стоимость.</p>
+
+      <div class="article-table-block">
+        <h3 class="article-table-title">Цена и общая выгода</h3>
+        <div class="article-table-scroll">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th style="width:220px;">Модель</th>
+                <th style="width:130px;">Цена</th>
+                <th>Оценка</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Gelios Nova G1</strong></td>
+                <td class="price-cell">4081 ₽</td>
+                <td><span class="rating-stars">★★★★★</span> Лучшее соотношение цена/качество</td>
+              </tr>
+              <tr>
+                <td><strong>Cleanbot tex0121</strong></td>
+                <td class="price-cell">5206 ₽</td>
+                <td><span class="rating-stars">★★★★☆</span> Много расходников, но без распыления</td>
+              </tr>
+              <tr>
+                <td><strong>Даджет W220</strong></td>
+                <td class="price-cell">5359 ₽</td>
+                <td><span class="rating-stars">★★★★☆</span> Максимальная чистота на больших окнах</td>
+              </tr>
+              <tr>
+                <td><strong>CleanLo HCR-11</strong></td>
+                <td class="price-cell">5543 ₽</td>
+                <td><span class="rating-stars">★★★☆☆</span> Средние характеристики, цена не выгодна</td>
+              </tr>
+              <tr>
+                <td><strong>Rutbot L200</strong></td>
+                <td class="price-cell">7240 ₽</td>
+                <td><span class="rating-stars">★★★☆☆</span> Дорого, маленький бак, функционал не оправдывает цену</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="article-mobile-cards">
+          <article class="rating-card">
+            <div class="rating-card-header">
+              <div class="rating-card-rank">1</div>
+              <div class="rating-card-model">Gelios Nova G1<span><span class="rating-stars">★★★★★</span> Лучшее соотношение цена/качество</span></div>
+              <div class="price-cell">4081 ₽</div>
+            </div>
+          </article>
+          <article class="rating-card">
+            <div class="rating-card-header">
+              <div class="rating-card-rank">2</div>
+              <div class="rating-card-model">Cleanbot tex0121<span><span class="rating-stars">★★★★☆</span> Много расходников, но без распыления</span></div>
+              <div class="price-cell">5206 ₽</div>
+            </div>
+          </article>
+          <article class="rating-card">
+            <div class="rating-card-header">
+              <div class="rating-card-rank">3</div>
+              <div class="rating-card-model">Даджет W220<span><span class="rating-stars">★★★★☆</span> Максимальная чистота на больших окнах</span></div>
+              <div class="price-cell">5359 ₽</div>
+            </div>
+          </article>
+          <article class="rating-card">
+            <div class="rating-card-header">
+              <div class="rating-card-rank">4</div>
+              <div class="rating-card-model">CleanLo HCR-11<span><span class="rating-stars">★★★☆☆</span> Средние характеристики, цена не выгодна</span></div>
+              <div class="price-cell">5543 ₽</div>
+            </div>
+          </article>
+          <article class="rating-card">
+            <div class="rating-card-header">
+              <div class="rating-card-rank">5</div>
+              <div class="rating-card-model">Rutbot L200<span><span class="rating-stars">★★★☆☆</span> Дорого, маленький бак, функционал не оправдывает цену</span></div>
+              <div class="price-cell">7240 ₽</div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="article-table-block">
+        <h3 class="article-table-title">Рекомендации по сценариям</h3>
+        <div class="article-table-scroll">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Ваш запрос</th>
+                <th>Рекомендуемая модель</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Первая покупка, минимум настроек</td>
+                <td><strong>Gelios Nova G1</strong> — круглый робот мойщик окон с понятным управлением</td>
+              </tr>
+              <tr>
+                <td>Панорамные окна, максимальная чистота</td>
+                <td><strong>Даджет W220</strong> — двойное распыление и мощность 90 Вт</td>
+              </tr>
+              <tr>
+                <td>Частая уборка, нужно много салфеток</td>
+                <td><strong>Cleanbot tex0121</strong> — 26 штук в комплекте</td>
+              </tr>
+              <tr>
+                <td>Важна защита от падения (аккумулятор)</td>
+                <td><strong>Rutbot L200</strong> — но примите во внимание цену и маленький резервуар</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="article-mobile-cards">
+          <article class="rating-card">
+            <div class="rating-card-header">
+              <div class="rating-card-rank">1</div>
+              <div class="rating-card-model">Первая покупка, минимум настроек<span><strong>Gelios Nova G1</strong> — круглый робот мойщик окон с понятным управлением</span></div>
+            </div>
+          </article>
+          <article class="rating-card">
+            <div class="rating-card-header">
+              <div class="rating-card-rank">2</div>
+              <div class="rating-card-model">Панорамные окна, максимальная чистота<span><strong>Даджет W220</strong> — двойное распыление и мощность 90 Вт</span></div>
+            </div>
+          </article>
+          <article class="rating-card">
+            <div class="rating-card-header">
+              <div class="rating-card-rank">3</div>
+              <div class="rating-card-model">Частая уборка, нужно много салфеток<span><strong>Cleanbot tex0121</strong> — 26 штук в комплекте</span></div>
+            </div>
+          </article>
+          <article class="rating-card">
+            <div class="rating-card-header">
+              <div class="rating-card-rank">4</div>
+              <div class="rating-card-model">Важна защита от падения (аккумулятор)<span><strong>Rutbot L200</strong> — но примите во внимание цену и маленький резервуар</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="product-strip article-product-strip">
+        <div class="mini-card-wrap">
+          <a class="mini-card winner" href="#gelios-detail">
+            <img src="assets/gelios-card.jpg" alt="Gelios Nova G1" />
+            <div class="mini-title"><span>Gelios</span><b>Nova G1</b><em class="mini-detail-note">Нажмите, чтобы посмотреть детали</em></div>
+            <div class="rank">♕</div>
+            <div class="best-label">★ ЛУЧШИЙ</div>
+          </a>
+          <div class="mini-actions">
+            <div class="mini-buy-meta"><span class="mini-price">4 081 ₽</span><span class="mini-score">10/10</span></div>
+            <div class="mini-buy-buttons">
+              <a class="mini-buy-btn" href="https://ozon.onelink.me/SNMZ?af_dp=https://ozon.ru/product/4354166505/&af_web_dp=https://ozon.ru/product/4354166505/&is_retargeting=true&c=vendor_org_1067507&pid=yandex_direct|article&hs=1&utm_source=yandex_direct&utm_medium=article&utm_campaign=vendor_org_1067507">Купить на Ozon</a>
+              <a class="mini-buy-btn" href="https://wildberries.ru/catalog/0/search.aspx?search=WW497233">Купить на Wildberries</a>
+            </div>
+          </div>
+        </div>
+        <div class="mini-card-wrap">
+          <a class="mini-card" href="#dadjet-detail">
+            <img src="assets/dadjet-card.jpg" alt="Даджет W220" />
+            <div class="mini-title"><span>Даджет</span><b>W220</b><em class="mini-detail-note">Нажмите, чтобы посмотреть детали</em></div>
+            <div class="rank">#2</div>
+          </a>
+          <div class="mini-actions">
+            <div class="mini-buy-meta"><span class="mini-price">5 359 ₽</span><span class="mini-score">9/10</span></div>
+            <div class="mini-buy-buttons">
+              <a class="mini-buy-btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-dadzhet-w220-moyshchik-okon-robot-s-raspyleniem-so-smennymi-salfetkami-12-sht-1545770565/?abt_att=1&at=XQtkRkox1FAY0nOsXGqyZQfg3rlmNcO2ykPqhNXQAJQ%E4%BB%B7%E6%A0%BC%EF%BC%9A5359%E5%8D%A2%E5%B8%83">Купить на Ozon</a>
+              <a class="mini-buy-btn" href="https://www.wildberries.ru/catalog/224314192/detail.aspx">Купить на Wildberries</a>
+            </div>
+          </div>
+        </div>
+        <div class="mini-card-wrap">
+          <a class="mini-card" href="#cleanbot-detail">
+            <img src="assets/cleanbot-card.jpg" alt="Cleanbot tex0121" />
+            <div class="mini-title"><span>Cleanbot</span><b>tex0121</b><em class="mini-detail-note">Нажмите, чтобы посмотреть детали</em></div>
+            <div class="rank">#3</div>
+          </a>
+          <div class="mini-actions">
+            <div class="mini-buy-meta"><span class="mini-price">5 206 ₽</span><span class="mini-score">7/10</span></div>
+            <div class="mini-buy-buttons">
+              <a class="mini-buy-btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-cleanbot-so-smennymi-salfetkami-26-sht-teh0121-677452159/?at=x6tPVPo2yFPX4G4gsW213NRi59E5BkUg99Xw4sN0X0o">Купить на Ozon</a>
+            </div>
+          </div>
+        </div>
+        <div class="mini-card-wrap">
+          <a class="mini-card" href="#rutbot-detail">
+            <img src="assets/rutbot-card.jpg" alt="Rutbot L200" />
+            <div class="mini-title"><span>Rutbot</span><b>L200</b><em class="mini-detail-note">Нажмите, чтобы посмотреть детали</em></div>
+            <div class="rank">#4</div>
+          </a>
+          <div class="mini-actions">
+            <div class="mini-buy-meta"><span class="mini-price">7 240 ₽</span><span class="mini-score">6/10</span></div>
+            <div class="mini-buy-buttons">
+              <a class="mini-buy-btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-rutbot-l200-robot-moyshchik-okon-s-raspyleniem-855586968/?at=83tB0Bp7lslZjMGBCRn5O40HQyKnr1TQV0XRkFq0k0pV">Купить на Ozon</a>
+            </div>
+          </div>
+        </div>
+        <div class="mini-card-wrap">
+          <a class="mini-card" href="#cleanlo-detail">
+            <img src="assets/cleanlo-card.jpg" alt="CleanLo HCR-11" />
+            <div class="mini-title"><span>CleanLo</span><b>HCR-11</b><em class="mini-detail-note">Нажмите, чтобы посмотреть детали</em></div>
+            <div class="rank">#5</div>
+          </a>
+          <div class="mini-actions">
+            <div class="mini-buy-meta"><span class="mini-price">5 543 ₽</span><span class="mini-score">5/10</span></div>
+            <div class="mini-buy-buttons">
+              <a class="mini-buy-btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-robot-moyshchik-okon-s-raspyleniem-cleanlo-1743780966/?at=oZt6R637MuEYg2ZJtq7OPRXCjP1Ew1cP7L6jKsBvVDEn">Купить на Ozon</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <h2 class="section-title" style="margin-top:44px;">Обзоры на топового робота-мойщика окон от наших коллег</h2>
-      <div class="review-image">
-        <a href="https://dzen.ru/a/aiBTr0pnuSnhaljB" target="_blank" rel="noopener noreferrer">
-          <img src="assets/gelios-review.png" alt="Обзор Gelios Nova G1" />
-        </a>
+      <div class="review-grid">
+        <div class="review-image">
+          <a href="https://dzen.ru/a/aiBTr0pnuSnhaljB" target="_blank" rel="noopener noreferrer">
+            <img src="assets/gelios-review.png" alt="Обзор Gelios Nova G1" />
+          </a>
+        </div>
+      </div>
+
+      <h3 class="article-table-title" style="margin-top:28px;">Обзоры других блогеров</h3>
+      <div class="review-grid">
+        <div class="review-image portrait-review">
+          <a href="https://www.drive2.ru/b/735270364602450025/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/drive2-blogger-review.png" alt="Обзор Gelios Nova G1 от блогера Drive2" />
+          </a>
+        </div>
       </div>
     </div>
   </section>
