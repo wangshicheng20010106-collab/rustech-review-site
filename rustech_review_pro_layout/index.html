@@ -106,9 +106,9 @@
     }
     .product-strip {
       display: grid;
-      grid-template-columns: 1.2fr repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 18px;
-      align-items: start;
+      align-items: stretch;
       margin-bottom: 58px;
     }
     .article-product-strip {
@@ -118,6 +118,7 @@
       display: flex;
       flex-direction: column;
       min-width: 0;
+      height: 100%;
       overflow: hidden;
       border: 1px solid #e7eaf0;
       border-radius: 18px;
@@ -148,7 +149,7 @@
       box-shadow: none;
     }
     .mini-card.winner {
-      min-height: 260px;
+      min-height: 220px;
       grid-column: span 1;
     }
     .mini-card img {
@@ -227,8 +228,9 @@
     .mini-actions {
       display: grid;
       gap: 8px;
+      min-height: 154px;
       padding: 16px 0 18px;
-      margin: 0 18px;
+      margin: auto 18px 0;
       border-top: 1px solid #edf0f4;
     }
     .mini-buy-meta {
@@ -254,6 +256,8 @@
     .mini-buy-buttons {
       display: grid;
       gap: 8px;
+      min-height: 84px;
+      align-content: center;
     }
     .mini-buy-btn {
       min-height: 38px;
@@ -786,11 +790,20 @@
     }
     .review-grid {
       display: grid;
-      grid-template-columns: minmax(280px, 380px);
-      gap: 16px;
-      margin-top: 28px;
-      justify-content: start;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+      gap: 24px;
+      margin-top: 24px;
       align-items: start;
+    }
+    .review-item {
+      min-width: 0;
+    }
+    .review-item-title {
+      margin: 0 0 14px;
+      color: var(--text);
+      font-size: 20px;
+      line-height: 1.25;
+      font-weight: 900;
     }
     .review-image {
       border-radius: 12px;
@@ -815,6 +828,7 @@
     .review-image.portrait-review {
       aspect-ratio: 594 / 1004;
       background: #fff;
+      max-width: 360px;
     }
     .smallcaps {
       font-weight: 850;
@@ -862,7 +876,10 @@
         width: min(78vw, 640px);
       }
       .review-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
+      }
+      .review-image.portrait-review {
+        max-width: 380px;
       }
       .rating-table {
         width: 100%;
@@ -1360,7 +1377,7 @@
             <div class="buy-row">
               <span class="price">4 081 ₽</span>
               <a class="btn" data-metrica-goal="buy_gelios_ozon_detail" href="https://ozon.onelink.me/SNMZ?af_dp=https://ozon.ru/product/4354166505/&af_web_dp=https://ozon.ru/product/4354166505/&is_retargeting=true&c=vendor_org_1067507&pid=yandex_direct|article&hs=1&utm_source=yandex_direct&utm_medium=article&utm_campaign=vendor_org_1067507">Купить на Ozon</a>
-              <a class="btn" href="https://wildberries.ru/catalog/0/search.aspx?search=WW497233">Купить на Wildberries</a>
+              <a class="btn" data-metrica-goal="buy_gelios_wildberries_detail" href="https://wildberries.ru/catalog/0/search.aspx?search=WW497233">Купить на Wildberries</a>
             </div>
           </div>
         </div>
@@ -1389,8 +1406,8 @@
             </ul>
             <div class="buy-row">
               <span class="price">5 359 ₽</span>
-              <a class="btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-dadzhet-w220-moyshchik-okon-robot-s-raspyleniem-so-smennymi-salfetkami-12-sht-1545770565/?abt_att=1&at=XQtkRkox1FAY0nOsXGqyZQfg3rlmNcO2ykPqhNXQAJQ%E4%BB%B7%E6%A0%BC%EF%BC%9A5359%E5%8D%A2%E5%B8%83">Купить на Ozon</a>
-              <a class="btn" href="https://www.wildberries.ru/catalog/224314192/detail.aspx">Купить на Wildberries</a>
+              <a class="btn" data-metrica-goal="buy_dadjet_ozon_detail" href="https://www.ozon.ru/product/robot-moyshchik-okon-dadzhet-w220-moyshchik-okon-robot-s-raspyleniem-so-smennymi-salfetkami-12-sht-1545770565/?abt_att=1&at=XQtkRkox1FAY0nOsXGqyZQfg3rlmNcO2ykPqhNXQAJQ%E4%BB%B7%E6%A0%BC%EF%BC%9A5359%E5%8D%A2%E5%B8%83">Купить на Ozon</a>
+              <a class="btn" data-metrica-goal="buy_dadjet_wildberries_detail" href="https://www.wildberries.ru/catalog/224314192/detail.aspx">Купить на Wildberries</a>
             </div>
           </div>
         </div>
@@ -1420,7 +1437,7 @@
             </ul>
             <div class="buy-row">
               <span class="price">5 206 ₽</span>
-              <a class="btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-cleanbot-so-smennymi-salfetkami-26-sht-teh0121-677452159/?at=x6tPVPo2yFPX4G4gsW213NRi59E5BkUg99Xw4sN0X0o">Купить на Ozon</a>
+              <a class="btn" data-metrica-goal="buy_cleanbot_ozon_detail" href="https://www.ozon.ru/product/robot-moyshchik-okon-cleanbot-so-smennymi-salfetkami-26-sht-teh0121-677452159/?at=x6tPVPo2yFPX4G4gsW213NRi59E5BkUg99Xw4sN0X0o">Купить на Ozon</a>
             </div>
           </div>
         </div>
@@ -1450,7 +1467,7 @@
             </ul>
             <div class="buy-row">
               <span class="price">7 240 ₽</span>
-              <a class="btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-rutbot-l200-robot-moyshchik-okon-s-raspyleniem-855586968/?at=83tB0Bp7lslZjMGBCRn5O40HQyKnr1TQV0XRkFq0k0pV">Купить на Ozon</a>
+              <a class="btn" data-metrica-goal="buy_rutbot_ozon_detail" href="https://www.ozon.ru/product/robot-moyshchik-okon-rutbot-l200-robot-moyshchik-okon-s-raspyleniem-855586968/?at=83tB0Bp7lslZjMGBCRn5O40HQyKnr1TQV0XRkFq0k0pV">Купить на Ozon</a>
             </div>
           </div>
         </div>
@@ -1480,7 +1497,7 @@
             </ul>
             <div class="buy-row">
               <span class="price">5 543 ₽</span>
-              <a class="btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-robot-moyshchik-okon-s-raspyleniem-cleanlo-1743780966/?at=oZt6R637MuEYg2ZJtq7OPRXCjP1Ew1cP7L6jKsBvVDEn">Купить на Ozon</a>
+              <a class="btn" data-metrica-goal="buy_cleanlo_ozon_detail" href="https://www.ozon.ru/product/robot-moyshchik-okon-robot-moyshchik-okon-s-raspyleniem-cleanlo-1743780966/?at=oZt6R637MuEYg2ZJtq7OPRXCjP1Ew1cP7L6jKsBvVDEn">Купить на Ozon</a>
             </div>
           </div>
         </div>
@@ -1658,8 +1675,8 @@
           <div class="mini-actions">
             <div class="mini-buy-meta"><span class="mini-price">4 081 ₽</span><span class="mini-score">10/10</span></div>
             <div class="mini-buy-buttons">
-              <a class="mini-buy-btn" href="https://ozon.onelink.me/SNMZ?af_dp=https://ozon.ru/product/4354166505/&af_web_dp=https://ozon.ru/product/4354166505/&is_retargeting=true&c=vendor_org_1067507&pid=yandex_direct|article&hs=1&utm_source=yandex_direct&utm_medium=article&utm_campaign=vendor_org_1067507">Купить на Ozon</a>
-              <a class="mini-buy-btn" href="https://wildberries.ru/catalog/0/search.aspx?search=WW497233">Купить на Wildberries</a>
+              <a class="mini-buy-btn" data-metrica-goal="buy_gelios_ozon_card" href="https://ozon.onelink.me/SNMZ?af_dp=https://ozon.ru/product/4354166505/&af_web_dp=https://ozon.ru/product/4354166505/&is_retargeting=true&c=vendor_org_1067507&pid=yandex_direct|article&hs=1&utm_source=yandex_direct&utm_medium=article&utm_campaign=vendor_org_1067507">Купить на Ozon</a>
+              <a class="mini-buy-btn" data-metrica-goal="buy_gelios_wildberries_card" href="https://wildberries.ru/catalog/0/search.aspx?search=WW497233">Купить на Wildberries</a>
             </div>
           </div>
         </div>
@@ -1672,8 +1689,8 @@
           <div class="mini-actions">
             <div class="mini-buy-meta"><span class="mini-price">5 359 ₽</span><span class="mini-score">9/10</span></div>
             <div class="mini-buy-buttons">
-              <a class="mini-buy-btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-dadzhet-w220-moyshchik-okon-robot-s-raspyleniem-so-smennymi-salfetkami-12-sht-1545770565/?abt_att=1&at=XQtkRkox1FAY0nOsXGqyZQfg3rlmNcO2ykPqhNXQAJQ%E4%BB%B7%E6%A0%BC%EF%BC%9A5359%E5%8D%A2%E5%B8%83">Купить на Ozon</a>
-              <a class="mini-buy-btn" href="https://www.wildberries.ru/catalog/224314192/detail.aspx">Купить на Wildberries</a>
+              <a class="mini-buy-btn" data-metrica-goal="buy_dadjet_ozon_card" href="https://www.ozon.ru/product/robot-moyshchik-okon-dadzhet-w220-moyshchik-okon-robot-s-raspyleniem-so-smennymi-salfetkami-12-sht-1545770565/?abt_att=1&at=XQtkRkox1FAY0nOsXGqyZQfg3rlmNcO2ykPqhNXQAJQ%E4%BB%B7%E6%A0%BC%EF%BC%9A5359%E5%8D%A2%E5%B8%83">Купить на Ozon</a>
+              <a class="mini-buy-btn" data-metrica-goal="buy_dadjet_wildberries_card" href="https://www.wildberries.ru/catalog/224314192/detail.aspx">Купить на Wildberries</a>
             </div>
           </div>
         </div>
@@ -1686,7 +1703,7 @@
           <div class="mini-actions">
             <div class="mini-buy-meta"><span class="mini-price">5 206 ₽</span><span class="mini-score">7/10</span></div>
             <div class="mini-buy-buttons">
-              <a class="mini-buy-btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-cleanbot-so-smennymi-salfetkami-26-sht-teh0121-677452159/?at=x6tPVPo2yFPX4G4gsW213NRi59E5BkUg99Xw4sN0X0o">Купить на Ozon</a>
+              <a class="mini-buy-btn" data-metrica-goal="buy_cleanbot_ozon_card" href="https://www.ozon.ru/product/robot-moyshchik-okon-cleanbot-so-smennymi-salfetkami-26-sht-teh0121-677452159/?at=x6tPVPo2yFPX4G4gsW213NRi59E5BkUg99Xw4sN0X0o">Купить на Ozon</a>
             </div>
           </div>
         </div>
@@ -1699,7 +1716,7 @@
           <div class="mini-actions">
             <div class="mini-buy-meta"><span class="mini-price">7 240 ₽</span><span class="mini-score">6/10</span></div>
             <div class="mini-buy-buttons">
-              <a class="mini-buy-btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-rutbot-l200-robot-moyshchik-okon-s-raspyleniem-855586968/?at=83tB0Bp7lslZjMGBCRn5O40HQyKnr1TQV0XRkFq0k0pV">Купить на Ozon</a>
+              <a class="mini-buy-btn" data-metrica-goal="buy_rutbot_ozon_card" href="https://www.ozon.ru/product/robot-moyshchik-okon-rutbot-l200-robot-moyshchik-okon-s-raspyleniem-855586968/?at=83tB0Bp7lslZjMGBCRn5O40HQyKnr1TQV0XRkFq0k0pV">Купить на Ozon</a>
             </div>
           </div>
         </div>
@@ -1712,7 +1729,7 @@
           <div class="mini-actions">
             <div class="mini-buy-meta"><span class="mini-price">5 543 ₽</span><span class="mini-score">5/10</span></div>
             <div class="mini-buy-buttons">
-              <a class="mini-buy-btn" href="https://www.ozon.ru/product/robot-moyshchik-okon-robot-moyshchik-okon-s-raspyleniem-cleanlo-1743780966/?at=oZt6R637MuEYg2ZJtq7OPRXCjP1Ew1cP7L6jKsBvVDEn">Купить на Ozon</a>
+              <a class="mini-buy-btn" data-metrica-goal="buy_cleanlo_ozon_card" href="https://www.ozon.ru/product/robot-moyshchik-okon-robot-moyshchik-okon-s-raspyleniem-cleanlo-1743780966/?at=oZt6R637MuEYg2ZJtq7OPRXCjP1Ew1cP7L6jKsBvVDEn">Купить на Ozon</a>
             </div>
           </div>
         </div>
@@ -1720,20 +1737,22 @@
 
       <h2 class="section-title" style="margin-top:44px;">Обзоры на топового робота-мойщика окон от наших коллег</h2>
       <div class="review-grid">
-        <div class="review-image">
-          <a href="https://dzen.ru/a/aiBTr0pnuSnhaljB" target="_blank" rel="noopener noreferrer">
-            <img src="assets/gelios-review.png" alt="Обзор Gelios Nova G1" />
-          </a>
-        </div>
-      </div>
-
-      <h3 class="article-table-title" style="margin-top:28px;">Обзоры других блогеров</h3>
-      <div class="review-grid">
-        <div class="review-image portrait-review">
-          <a href="https://www.drive2.ru/b/735270364602450025/" target="_blank" rel="noopener noreferrer">
-            <img src="assets/drive2-blogger-review.png" alt="Обзор Gelios Nova G1 от блогера Drive2" />
-          </a>
-        </div>
+        <article class="review-item">
+          <h3 class="review-item-title">Обзор от коллег</h3>
+          <div class="review-image">
+            <a data-metrica-goal="review_dzen_gelios_click" href="https://dzen.ru/a/aiBTr0pnuSnhaljB" target="_blank" rel="noopener noreferrer">
+              <img src="assets/gelios-review.png" alt="Обзор Gelios Nova G1" />
+            </a>
+          </div>
+        </article>
+        <article class="review-item">
+          <h3 class="review-item-title">Обзор другого блогера</h3>
+          <div class="review-image portrait-review">
+            <a data-metrica-goal="review_drive2_blogger_click" href="https://www.drive2.ru/b/735270364602450025/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/drive2-blogger-review.png" alt="Обзор Gelios Nova G1 от блогера Drive2" />
+            </a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -1744,25 +1763,30 @@
 </div>
 <script>
   (function () {
-    var geliosOzonButton = document.querySelector('[data-metrica-goal="buy_gelios_ozon_detail"]');
+    var metricaButtons = document.querySelectorAll("a[data-metrica-goal]");
 
-    if (!geliosOzonButton) return;
+    metricaButtons.forEach(function (button) {
+      button.addEventListener("click", function (event) {
+        if (!window.ym) return;
 
-    geliosOzonButton.addEventListener("click", function (event) {
-      if (window.ym) {
         event.preventDefault();
 
-        var targetUrl = geliosOzonButton.href;
+        var goalId = button.dataset.metricaGoal;
+        var targetUrl = button.href;
         var didNavigate = false;
         var navigate = function () {
           if (didNavigate) return;
           didNavigate = true;
-          window.location.href = targetUrl;
+          if (button.target === "_blank") {
+            window.open(targetUrl, "_blank", "noopener");
+          } else {
+            window.location.href = targetUrl;
+          }
         };
 
-        ym(110235588, "reachGoal", "buy_gelios_ozon_detail", {}, navigate);
+        ym(110235588, "reachGoal", goalId, {}, navigate);
         setTimeout(navigate, 700);
-      }
+      });
     });
   })();
 </script>
