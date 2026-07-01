@@ -1767,7 +1767,7 @@
 
     metricaButtons.forEach(function (button) {
       button.addEventListener("click", function (event) {
-        if (!window.ym) return;
+        if (typeof ym !== "function") return;
 
         event.preventDefault();
 
@@ -1784,6 +1784,7 @@
           }
         };
 
+        console.log("[Metrica goal]", goalId);
         ym(110235588, "reachGoal", goalId, {}, navigate);
         setTimeout(navigate, 700);
       });
