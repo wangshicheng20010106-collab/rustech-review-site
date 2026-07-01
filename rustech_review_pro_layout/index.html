@@ -117,32 +117,39 @@
     .mini-card-wrap {
       display: flex;
       flex-direction: column;
-      gap: 12px;
       min-width: 0;
+      overflow: hidden;
+      border: 1px solid #e7eaf0;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(15,23,42,.08);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .mini-card-wrap:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(15,23,42,.12);
+    }
+    .mini-card-wrap.winner-wrap {
+      border-color: #f6db7d;
+      background: linear-gradient(180deg, #fffdf5 0%, #fff9e4 100%);
     }
     .mini-card {
       position: relative;
       min-height: 220px;
-      border: 1px solid #e7eaf0;
-      border-radius: 18px;
       overflow: hidden;
-      background: #fff;
-      box-shadow: 0 8px 20px rgba(15,23,42,.08);
-      transition: transform .25s ease, box-shadow .25s ease;
+      background: transparent;
       display: block;
       text-decoration: none;
       color: inherit;
       cursor: pointer;
     }
     .mini-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(15,23,42,.12);
+      transform: none;
+      box-shadow: none;
     }
     .mini-card.winner {
       min-height: 260px;
       grid-column: span 1;
-      border-color: #f6db7d;
-      background: linear-gradient(180deg, #fffdf5 0%, #fff9e4 100%);
     }
     .mini-card img {
       width: 100%;
@@ -220,6 +227,9 @@
     .mini-actions {
       display: grid;
       gap: 8px;
+      padding: 16px 0 18px;
+      margin: 0 18px;
+      border-top: 1px solid #edf0f4;
     }
     .mini-buy-meta {
       display: flex;
@@ -1349,7 +1359,7 @@
             </ul>
             <div class="buy-row">
               <span class="price">4 081 ₽</span>
-              <a class="btn" href="https://ozon.onelink.me/SNMZ?af_dp=https://ozon.ru/product/4354166505/&af_web_dp=https://ozon.ru/product/4354166505/&is_retargeting=true&c=vendor_org_1067507&pid=yandex_direct|article&hs=1&utm_source=yandex_direct&utm_medium=article&utm_campaign=vendor_org_1067507">Купить на Ozon</a>
+              <a class="btn" data-metrica-goal="buy_gelios_ozon_detail" href="https://ozon.onelink.me/SNMZ?af_dp=https://ozon.ru/product/4354166505/&af_web_dp=https://ozon.ru/product/4354166505/&is_retargeting=true&c=vendor_org_1067507&pid=yandex_direct|article&hs=1&utm_source=yandex_direct&utm_medium=article&utm_campaign=vendor_org_1067507">Купить на Ozon</a>
               <a class="btn" href="https://wildberries.ru/catalog/0/search.aspx?search=WW497233">Купить на Wildberries</a>
             </div>
           </div>
@@ -1638,7 +1648,7 @@
       </div>
 
       <div class="product-strip article-product-strip">
-        <div class="mini-card-wrap">
+        <div class="mini-card-wrap winner-wrap">
           <a class="mini-card winner" href="#gelios-detail">
             <img src="assets/gelios-card.jpg" alt="Gelios Nova G1" />
             <div class="mini-title"><span>Gelios</span><b>Nova G1</b><em class="mini-detail-note">Нажмите, чтобы посмотреть детали</em></div>
@@ -1732,5 +1742,18 @@
     <div class="container">RusTech Review · Статический сайт · 2026</div>
   </footer>
 </div>
+<script>
+  (function () {
+    var geliosOzonButton = document.querySelector('[data-metrica-goal="buy_gelios_ozon_detail"]');
+
+    if (!geliosOzonButton) return;
+
+    geliosOzonButton.addEventListener("click", function () {
+      if (window.ym) {
+        ym(110235588, "reachGoal", "buy_gelios_ozon_detail");
+      }
+    });
+  })();
+</script>
 </body>
 </html>
