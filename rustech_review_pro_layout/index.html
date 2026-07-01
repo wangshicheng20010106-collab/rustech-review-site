@@ -1748,9 +1748,20 @@
 
     if (!geliosOzonButton) return;
 
-    geliosOzonButton.addEventListener("click", function () {
+    geliosOzonButton.addEventListener("click", function (event) {
       if (window.ym) {
-        ym(110235588, "reachGoal", "buy_gelios_ozon_detail");
+        event.preventDefault();
+
+        var targetUrl = geliosOzonButton.href;
+        var didNavigate = false;
+        var navigate = function () {
+          if (didNavigate) return;
+          didNavigate = true;
+          window.location.href = targetUrl;
+        };
+
+        ym(110235588, "reachGoal", "buy_gelios_ozon_detail", {}, navigate);
+        setTimeout(navigate, 700);
       }
     });
   })();
