@@ -172,6 +172,19 @@
       }
     }
   </style>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110327222', 'ym');
+
+      ym(110327222, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/110327222" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 
@@ -192,7 +205,7 @@
     <h2 class="section-title">Наши рейтинги, статьи, видео обзоры, лайфхаки:</h2>
 
     <section class="cards">
-      <a class="article-card" href="./top5bot140/index.html">
+      <a class="article-card" data-metrica-goal="homepage_top5bot140_click" href="./top5bot140/index.html">
         <span class="arrow"></span>
 
         <h2>Топ-5: Лучшие роботы-мойщики окон | Рейтинг 2026 года.</h2>
@@ -205,5 +218,35 @@
     </section>
   </main>
 
+  <script>
+    (function () {
+      var metricaButtons = document.querySelectorAll("a[data-metrica-goal]");
+
+      metricaButtons.forEach(function (button) {
+        button.addEventListener("click", function (event) {
+          if (typeof ym !== "function") return;
+
+          event.preventDefault();
+
+          var goalId = button.dataset.metricaGoal;
+          var targetUrl = button.href;
+          var didNavigate = false;
+          var navigate = function () {
+            if (didNavigate) return;
+            didNavigate = true;
+            if (button.target === "_blank") {
+              window.open(targetUrl, "_blank", "noopener");
+            } else {
+              window.location.href = targetUrl;
+            }
+          };
+
+          console.log("[Metrica goal]", goalId);
+          ym(110327222, "reachGoal", goalId, {}, navigate);
+          setTimeout(navigate, 700);
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
